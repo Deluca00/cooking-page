@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAT</title>
+
+
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/footer.css">
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/chef-icon.png">
+    <link rel="stylesheet" href="./Assets/css/comment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- begin: main -->
+    <div id="main">
+        <!-- begin: menu -->
+        <div>
+            <div class="nav-menu menu" id="nav-menu">
+                <!-- begin: header -->
+                <div id="header">
+                    <a href="./index.html"><img class="imglogo logo" src="./Assets/Images/logo.png" alt="logo-hat-chef"></a>
+                    <a href=""><img class="img-hidden" src="" alt="logo-hat-chef"></a>
+                    <ul id="nav">
+                        <li><a href="./index.html">TRANG CHỦ</a></li>
+                        <li><a href="./food.html">MÓN ĂN</a></li>
+                        <li><a href="./contact.html">TƯƠNG TÁC</a></li>
+                    </ul>
+                </div>
+                <!-- end: header -->
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+
+
+            </div>
+            <div>
+                <i class="fa-solid fa-x  nav-close" id="nav-close" aria-hidden="true"></i>
+            </div>
+            <!-- end: menu -->
+        </div>
+        <!-- begin: slider -->
+        <div id="slider">
+            <div class="black-layer js-search-close">
+                <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true">
+                    <swiper-slide>
+                        <div class="content">
+                            <h1>ĐẦU BẾP TẠI GIA
+                                <br>
+                                VKU
+                            </h1>
+                            <h3>TAT - GROUP</h3>
+                            <button class="learn-btn" onclick="openForm('share')">
+                                <h4>CHIA SẺ MÓN ĂN</h4 >
+                                    
+                            </button>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="content">
+                            <h1>ĐẦU BẾP TẠI GIA
+                                <br>
+                                VKU
+                            </h1>
+                            <h3>TAT - GROUP</h3>
+                            <button class="learn-btn">
+                                <h4>THÊM</h4>
+                            </button>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="content">
+                            <h1>ĐẦU BẾP TẠI GIA
+                                <br>
+                                VKU
+                            </h1>
+                            <h3>TAT - GROUP</h3>
+                            <button class="learn-btn">
+                                <h4>THÊM</h4>
+                            </button>
+                        </div>
+                    </swiper-slide>
+                </swiper-container>
+            </div>
+        </div>
+        <!-- end: slider -->
+        <!-- begin: What we do  -->
+        <div class="formf container-popf" id="share">
+            <div class="upform-main">
+                <div class="border-inputform">
+                    <h1>CHIA SẺ MÓN ĂN </h1>
+                <form name="check1" action="#" onsubmit="return kiemtra()" >
+                    <label for="video">Video:</label>
+                    <video id="video-preview" controls></video>
+                    <input type="file" id="video" name="video" accept="video/*" required><br>
+            
+                    <label for="thumbnail">Ảnh Thumbnail:</label>
+                    <img id="thumbnail-preview" src="" alt="Thumbnail Preview">
+                    <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required><br>
+            
+                    <label for="ten-mon-an">Tên Món Ăn:</label>
+                    <input type="text" id="ten-mon-an" name="ten_mon_an" required><br>
+            
+                    <label for="mo-ta">Mô Tả Món Ăn:</label>
+                    <textarea id="mo-ta" name="mo_ta" rows="4" required></textarea><br>
+            
+                    <label for="danh-gia">Đánh Giá (1-5 sao):</label>
+                    <input type="number" id="danh-gia" name="danh_gia" min="1" max="5" required><br>
+            
+                    <label for="ho-ten">Họ và Tên:</label>
+                    <input type="text" id="ho-ten" name="ho_ten" required><br>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+            
+                    <label for="sdt">Số Điện Thoại:</label>
+                    <input type="tel" id="sdt" name="sdt" required><br>
+            
+                    <input type="submit" value="Upload" onclick="notify()">
+                </form>
+                </div>
+            </div>
+            <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('share')"></i>
+        </div>
+        <div id="WWD">
+            <h2>GIỚI THIỆU</h2>
+            <img src="./Assets/Images/separator.png" alt="">
+
+            <div class="content-WWD">
+                <div class="wwd-list">
+                    <img src="./Assets/Images/service.png" alt="">
+                    <h3>TỔNG QUÁT</h3>
+                    <p>Website đầu bếp tại gia hướng dẫn nấu ăn nhanh gọn, tiện ích, thơm ngon và cực kì dễ dàng</p>
+                </div>
+                <div class="wwd-list">
+                    <img src="./Assets/Images/service2.png" alt="">
+                    <h3>TIỆN DỤNG</h3>
+                    <p>Cung cấp khá nhiều công thức nấu ăn hấp dẫn, Các công thức nấu ăn đều có hình minh họa với các
+                        bước cụ thể để giúp bạn dễ hình dung hơn quá trình làm</p>
+                </div>
+                <div class="wwd-list">
+                    <img src="./Assets/Images/service3.png" alt="">
+                    <h3>MINH HỌA</h3>
+                    <p>Các công thức nấu ăn đều có hình minh họa với các bước cụ thể để giúp bạn dễ hình dung hơn quá
+                        trình làm.
+                        Có các video dạy nấu ăn trên kênh Youtube </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- end: What we do  -->
+        <!-- begin: favorite food -->
+        <div class="favorite__food">
+            <h2 class="ff-title">CÁC MÓN ĂN ĐƯỢC YÊU THÍCH</h2>
+            <div class="row">
+                <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
+                <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 item-ff">
+                            <div class="img-food">
+                                <img src="./Assets/images 2/banh-tart-so-co-la.jpg" alt="" class="food-img">
+                                <div class="hover__ff-layer">
+                                    <i class="fa-solid fa-plus" onclick="openForm('like1')"></i>
+                                </div>
+                                <div class="num-like">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="ff-num-like">1000 lượt xem</span>
+                                </div>
+                            </div>
+                            <div class="div-title">
+                                <span class="name-food">
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Bánh Tart
+                                    Socola <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                </span>
+                            </div>
+                            <div class="formf container-popf" id="like1">
+
+                                <div class="headerf" class="text-center">
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> bánh tart
+                                    socola <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                </div>
+
+                                <div class="wp-contentf">
+
+                                    <div class="contentf">
+                                        <p>Chocolate Tart này là một món ăn cổ điển của Pháp. Nó rất ngon và khá dễ làm.
+                                            Món tráng miệng hoàn hảo cho những người yêu thích sô cô la!
+                                        </p>
+                                    </div>
+
+                                    <div class="sidebar">
+                                        <div class="anh">
+                                            <swiper-container
+                                                style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                                class="mySwiper" thumbs-swiper=".mySwiper2" loop="true"
+                                                space-between="10" navigation="true">
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/banh-tart-so-co-la.jpg"
+                                                        title="Bánh tart socola" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/socola.jpg" title="socola" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/bo.jpg" title="Bơ" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/bot_mi.jpg" title="Bột mì" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/khuon-tart.jpg" title="Khuôn" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/egg.jpg" title="Trứng" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/kem sữa.jpg" title="Kem sữa" />
+                                                </swiper-slide>
+
+
+                                            </swiper-container>
+
+                                            <swiper-container class="mySwiper2" loop="true" space-between="10"
+                                                slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/banh-tart-so-co-la.jpg"
+                                                        title="Bánh tart socola" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/socola.jpg" title="socola" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/bo.jpg" title="Bơ" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/bot_mi.jpg" title="Bột mì" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/khuon-tart.jpg" title="Khuôn" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/egg.jpg" title="Trứng" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/kem sữa.jpg" title="Kem sữa" />
+                                                </swiper-slide>
+                                            </swiper-container>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="footerf">
+                                    <div class="tabs">
+                                        <ul class="nav-tabs">
+                                            <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
+                                            <li><a href="#muc-2">Cách làm</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="muc-1" class="tab-content-item">
+                                                <h1>Thời gian</h1>
+                                                <p>10 phút</p>
+                                                <h1>Nguyên liệu</h1>
+                                                <p> + 300 g bơ tảng <br>
+                                                    + 330 g bột mì số 8 <br>
+                                                    + 75 g bơ nước <br>
+                                                    + 115 g đường xay <br>
+                                                    + 75 g trứng <br>
+                                                    + 80 g nước đường <br>
+                                                    + 280 g kem sữa <br>
+                                                    + 450 g socola đen <br>
+                                                    + Khuôn tart
+                                                </p>
+                                            </div>
+
+                                            <div id="muc-2" class="tab-content-item">
+                                                <h1>Thời gian</h1>
+                                                <p>20 phút</p>
+                                                <h1>Công thức :</h1>
+                                                <p>Bước 1: Trộn đều hỗn hợp đường xay, bột làm bánh và trứng với bơ
+                                                    nước, nhồi cho đều, mịn</p>
+                                                <p>Bước 2: Rắc bột áo lên mặt bàn sạch, cán bột mỏng 0,5cm. Đặt 1/2 tảng
+                                                    bơ vào giữa, dùng bột gói kín bơ lại</p>
+                                                <p>Bước 3: Cán mỏng 0.5cm. Gập khối bột lại làm 3, cho vào ngăn đá tủ
+                                                    lạnh khoảng 5 phút, lấy ra cán mỏng 0.5cm</p>
+                                                <p>Bước 4: Cắt bột thành những miếng nhỏ đặt vào khuôn, cắt bỏ phần bột
+                                                    thừa. Đem nướng ở nhiệt độ 180oC 15 phút cho bánh chín vàng</p>
+                                                <p>Bước 5: Đun hỗn hợp kem sữa, nước đường, sô-cô-la đen, 1/2 bơ còn lại
+                                                    với nhau sau đó để nguội. Cho hỗn hợp này vào tủ lạnh, khi ăn nặn
+                                                    đều lên mặt khuôn của bánh. Trang trí với viên sô-cô-la. Chỉ với vài
+                                                    bước làm đơn giản và nhanh các bạn đã có được món Bánh tart sô cô la
+                                                    rồi.</p>
+
+                                                <div class="video"><iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/rMVsq8cUn2E"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        allowfullscreen></iframe></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('like1')"></i>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 item-ff">
+                            <div class="img-food">
+                                <img src="./Assets/images 2/salatcahoi.jpg" alt="" class="food-img">
+                                <div class="hover__ff-layer">
+                                    <i class="fa-solid fa-plus" onclick="openForm('like2')"></i>
+                                </div>
+                                <div class="num-like">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="ff-num-like">1000 lượt xem</span>
+                                </div>
+                            </div>
+                            <div class="div-title">
+                                <span class="name-food">
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Salad Cá Hồi
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                </span>
+                            </div>
+                            <div class="formf container-popf" id="like2">
+
+                                <div class="headerf" class="text-center">
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Salad cá hồi<i
+                                        class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                </div>
+
+                                <div class="wp-contentf">
+
+                                    <div class="contentf">
+                                        <p> Là một trong những món thích hợp dành cho người giảm cân, salad cá hồi ăn
+                                            rất vừa miệng, có sự kết hợp giữa các loại rau củ và salad làm cho món ăn có
+                                            chứa nhiều chất xơ và vitamin.
+
+                                        </p>
+                                    </div>
+
+                                    <div class="sidebar">
+                                        <div class="anh">
+                                            <swiper-container
+                                                style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                                class="mySwiper" thumbs-swiper=".mySwiper3" loop="true"
+                                                space-between="10" navigation="true">
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/salatcahoi.jpg" title="Salat cá hồi" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/cahoi.jpg" title="Cá hồi" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/daucove.jpg" title="Đậu cove" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/xalach.jpg" title="Xà lách" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/ca-chua.jpg" title="Cà chua" />
+                                                </swiper-slide>
+
+
+
+                                            </swiper-container>
+
+                                            <swiper-container class="mySwiper3" loop="true" space-between="10"
+                                                slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/salatcahoi.jpg" title="Salat cá hồi" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/cahoi.jpg" title="Cá hồi" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/daucove.jpg" title="Đậu cove" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/xalach.jpg" title="Xà lách" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/ca-chua.jpg" title="Cà chua" />
+                                                </swiper-slide>
+
+
+
+
+
+                                            </swiper-container>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="footerf">
+                                    <div class="tabs">
+                                        <ul class="nav-tabs">
+                                            <li class="active"><a href="#muc-3">Chuẩn bị</a></li>
+                                            <li><a href="#muc-4">Cách làm</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="muc-3" class="tab-content-item">
+                                                <h1>Thời gian</h1>
+                                                <p>10 phút</p>
+                                                <h1>Nguyên liệu</h1>
+                                                <p>
+                                                    + 300g phi lê cá hồi <br>
+                                                    + 100g đậu Cove làm sạch, cắt khúc <br>
+                                                    + 100g cà chua Cherry <br>
+                                                    + Khoai tây hấp chín, bóc vỏ, cắt nhỏ <br>
+                                                    + Xà lách, rau thơm rửa sạch<br>
+                                                    + Dầu oliu<br>
+                                                    + Hành tây, hành tím cắt lát mỏng<br>
+                                                    + 1 quả trứng gà luộc chín cắt làm tư<br>
+                                                    + 50ml nước cam<br>
+                                                    + 30ml giấm lựu<br>
+                                                    + 1 thìa mù tạt nếu thích
+
+                                                </p>
+                                            </div>
+
+                                            <div id="muc-4" class="tab-content-item">
+                                                <h1>Thời gian</h1>
+                                                <p>15 phút</p>
+                                                <h1>Công thức :</h1>
+                                                <p>Bước 1: Cá hồi rã đông, rửa sạch, để ráo, cắt miếng nhỏ. Sau đó cho 1
+                                                    thìa dầu oliu vào chảo, dầu nóng thì cho cá hồi vào áp chảo rồi gắp
+                                                    ra dĩa. </p>
+                                                <p>Bước 2: Cho đậu cove, khoai tây, trứng gà thành phẩm, rau xà lách,
+                                                    rau thơm, giấm, nước cam, mù tạt vào tô trộn đều cho ra dĩa lớn</p>
+                                                <p>Bước 3: Cho cá hồi áp chảo lên trên, trang trí thêm rau ngò là hoàn
+                                                    thành. </p>
+                                                <div class="video"><iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/0qlp4bnlUMw"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        allowfullscreen></iframe></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('like2')"></i>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 item-ff">
+                            <div class="img-food">
+                                <img src="./Assets/images 2/hutiuchay/hutiu1.png" alt="" class="food-img">
+                                <div class="hover__ff-layer">
+                                    <i class="fa-solid fa-plus" onclick="openForm('like3')"></i>
+                                </div>
+                                <div class="num-like">
+                                    <i class="fa-regular fa-eye"></i>
+                                    <span class="ff-num-like">1000 lượt xem</span>
+                                </div>
+                            </div>
+                            <div class="div-title">
+                                <span class="name-food">
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Hủ Tíu Chay <i
+                                        class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                </span>
+                            </div>
+                            <div class="formf container-popf" id="like3">
+
+                                <div class="headerf" class="text-center">
+                                    <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Hủ Tíu Chay <i
+                                        class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                </div>
+
+                                <div class="wp-contentf">
+
+                                    <div class="contentf">
+                                        <p>Là món ăn tuyệt vời để bạn đổi vị cho bữa ăn gia đình hoặc làm mới thực đơn
+                                            trong những ngày rằm, đầu tháng. Vị thanh đạm do được chế biến từ củ quả đã
+                                            giúp món ăn không chỉ phù hợp với khẩu vị nhiều người mà còn rất bổ dưỡng.
+
+
+                                        </p>
+                                    </div>
+
+                                    <div class="sidebar">
+                                        <div class="anh">
+                                            <swiper-container
+                                                style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                                class="mySwiper" thumbs-swiper=".mySwiper4" loop="true"
+                                                space-between="10" navigation="true">
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu1.png"
+                                                        title="Hủ Tíu Chay" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu2.png"
+                                                        title="Bánh đa" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu3.png" title="Nấm" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu4.png" title="Hủ Tíu" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu5.png"
+                                                        title="Đậu Miếng" />
+                                                </swiper-slide>
+
+
+                                            </swiper-container>
+
+                                            <swiper-container class="mySwiper4" loop="true" space-between="10"
+                                                slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu1.png"
+                                                        title="Hủ Tíu Chay" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu2.png"
+                                                        title="Bánh đa" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu3.png" title="Nấm" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu4.png" title="Hủ Tíu" />
+                                                </swiper-slide>
+                                                <swiper-slide>
+                                                    <img src="./Assets/images 2/hutiuchay/hutiu5.png"
+                                                        title="Đậu Miếng" />
+                                                </swiper-slide>
+
+                                            </swiper-container>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="footerf">
+                                    <div class="tabs">
+                                        <ul class="nav-tabs">
+                                            <li class="active"><a href="#muc-5">Chuẩn bị</a></li>
+                                            <li><a href="#muc-6">Cách làm</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="muc-5" class="tab-content-item">
+                                                <h1>Thời gian</h1>
+                                                <p>10 phút</p>
+                                                <h1>Nguyên liệu</h1>
+                                                <p> - Nấm đông cô: 200 gr <br>
+                                                    - Hành boa rô: 80 gr <br>
+                                                    - Vỏ hoành thánh: 100 gr <br>
+                                                    - Đậu hũ trắng: 300 gr <br>
+                                                    - Bắp Mỹ: 200 gr <br>
+                                                    - Nước: 2 lít , Đường phèn: 10 gr , Muối: 13 gr , Tiêu: 2 gr , Dầu
+                                                    ăn: 20 ml ,Hạt nêm chay: 10 gr <br>
+                                                    - Hủ tiếu: 500 gr <br>
+                                                    - Cà rốt, củ cải trắng, cải thảo, khoai môn, khoai lang: 100 gr mỗi
+                                                    loại. <br>
+
+                                                </p>
+                                            </div>
+
+                                            <div id="muc-6" class="tab-content-item">
+                                                <h1>Thời gian</h1>
+                                                <p>20 phút</p>
+                                                <h1>Công thức :</h1>
+                                                <p>- Bước 1: Làm hoành thánh chay: Khoai môn và khoai lang hấp chín,
+                                                    dùng nĩa nghiền khoai cho mịn nhuyễn. Cho vào tô khoai môn, khoai
+                                                    lang, nấm đông cô băm nhỏ, thêm hành boa rô cắt nhỏ. Nêm gia vị gồm
+                                                    dầu ăn, hạt nêm chay, tiêu xay. Dùng muỗng trộn đều các nguyên liệu
+                                                    với nhau. Múc một muỗng nhỏ nhân vào lá hoành thánh, dùng tay gấp và
+                                                    xếp tròn lá hoành thánh lại với nhau.
+                                                    <br><br>
+                                                    - Bước 2: Đun nóng dầu ăn, cho hành boa rô cắt lát vào phi vàng
+                                                    thơm, sau đó vớt hành ra, tiếp tục cho 300gr đậu hũ trắng cắt miếng
+                                                    vuông vào chiên vàng đều các mặt. Tiếp theo cho hoành thánh vào
+                                                    chiên vàng giòn.
+                                                    <br><br>
+                                                    - Bước 3: Nấu nước dùng chay: Chuẩn bị nồi lớn, cho lê cắt miếng,
+                                                    bắp Mỹ cắt khúc, hành boa rô cắt khúc và muối, đổ vào 2 lít nước.
+                                                    Đậy nắp và hầm nhỏ lửa trong 60 phút.
+                                                    <br><br>
+                                                    - Bước 4: Sau khi hầm 60 phút, vớt bỏ phần xác rau củ, lọc lấy nước
+                                                    dùng. Cho vào cà rốt, củ cải trắng cắt lát và 100gr nấm đông cô vào
+                                                    nấu khoảng 20 phút. Sau đó cho cải thảo cắt khúc vào và nêm gia vị
+                                                    gồm muối 10 gr, hạt nêm chay 5gr và đường phèn 10gr. Dùng muỗng
+                                                    khuấy đều, đợi hỗn hợp sôi thêm lần nữa thì tắt bếp.
+                                                    <br><br>
+                                                    - Bước 5: Trụng hủ tiếu cho vào tô, thêm các topping gồm đậu hũ
+                                                    chiên, hoành thánh, ngò rí, hành boa rô phi vàng, tiêu, rau củ và
+                                                    chan nước dùng. Hủ tiếu chay ăn kèm tàu hũ ki chiên giòn và rau giá
+                                                    rất ngon.
+                                                    <br><br>
+
+                                                <div class="video"><iframe width="560" height="315"
+                                                        src="https://www.youtube.com/embed/3l3BysiJ6vk"
+                                                        title="YouTube video player" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        allowfullscreen></iframe></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('like3')"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end: favorite food -->
+
+    <div class="container comment__container">
+        <!-- begin: comment -->
+    <div class="comment">
+        <div class="slides">
+            <!-- begin button radio -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <!-- end button radio -->
+
+            <!-- begin img slide -->
+            <div class="comment__slide first">
+                <img src="./Assets/image test/user1.webp" alt="">
+
+                <h2 class="title-comment">Võ Thiện</h2>
+
+                <p>trang web rất hữu ích và dễ sử dụng</p>
+                
+            </div>
+            <div class="comment__slide">
+                <img src="./Assets/image test/user2.webp" alt="">
+                <h2 class="title-comment">Hồ Thế Bảo</h2>
+
+                <p>Hữu ích, có đủ công thức nấu ăn mà tôi cần</p>
+            </div>
+            <div class="comment__slide">
+                <img src="./Assets/image test/user3.jpg" alt="">
+                <h2 class="title-comment">Huỳnh Ngọc Khanh</h2>
+
+                <p>Có video hướng dẫn cụ thể</p>
+            </div>
+            <div class="comment__slide">
+                <img src="./Assets/image test/user4.jpg" alt="">
+                <h2 class="title-comment">Võ Quốc Hoàng</h2>
+
+                <p>Những công thức nấu ăn được mô tả một cách dễ hiểu</p>
+            </div>
+            <!-- end img slide -->
+
+            <!-- begin automatic navigation -->
+            <div class="navigation-auto">
+                <div class="auto-btn1">
+
+                </div>
+                <div class="auto-btn2">
+
+                </div>
+                <div class="auto-btn3">
+
+                </div>
+                <div class="auto-btn4">
+
+                </div>
+            </div>
+            <!-- end automatic navigation -->
+        </div>
+        <!-- begin manual navigation -->
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
+        <!-- end manual navigation -->
+    </div>
+    <!-- end: comment -->
+    </div>
+
+    <!-- begin footer -->
+    <div id="footer">
+        <div class="container1">
+            <div class="row1">
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <ul>
+                        <li><a href="#"><i class="fa-regular fa-envelope"></i> baolathe0108@gmail.com</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone"></i> 0782087247</a></li>
+                        <li><a href="#"><i class="fa-sharp fa-solid fa-location-dot"></i> 61 Đoàn Nguyễn Tuấn</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>TEAM</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/profile.php?id=100017145340114">Huỳnh Ngọc Khanh</a>
+                        </li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100022727594702">Võ Thiện</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100070373126042">Hồ Thế Bảo</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>hi</h4>
+                    <ul>
+                        <li><a href="#">WE</a></li>
+                        <li><a href="#">ARE</a></li>
+                        <li><a href="#">THE</a></li>
+                        <li><a href="#">BEST</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100017145340114"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="add hidden-menu">
+        <div class="container">
+            <i class="fa-solid fa-xmark exit-nav-menu"></i>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul id="nav-mobile">
+                        <li class="nav-mobile-item"><a href="./index.html">TRANG CHỦ</a></li>
+                        <li class="nav-mobile-item"><a href="./food.html">MÓN ĂN</a></li>
+                        <li class="nav-mobile-item"><a href="./contact.html">TƯƠNG TÁC</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end : footer -->
+    <!--end: main  -->
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+<script src="https://use.fontawesome.com/1744f3f671.js"></script>
+<script src="./Assets/js/profo.js"></script>
+<script src="./Assets/js/header.js"></script>
+<script src="./Assets/js/layout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./Assets/js/comment.js"></script>
+</html>
