@@ -18,7 +18,6 @@
     include "./layout/filechung/menu.php";
     include "./layout/food/banner.php";
     include "./layout/food/profo.php";
-    include "./layout/food/profo.php";
     include "./layout/filechung/footer.php";
     ?>    
     </div>
