@@ -4,9 +4,9 @@
                 <div class="footer-col">
                     <h4>Liên hệ</h4>
                     <ul>
-                        <li><a href="#"><i class="fa-regular fa-envelope"></i> baolathe0108@gmail.com</a></li>
-                        <li><a href="#"><i class="fa-solid fa-phone"></i> 0782087247</a></li>
-                        <li><a href="#"><i class="fa-sharp fa-solid fa-location-dot"></i> 61 Đoàn Nguyễn Tuấn</a>
+                        <li><a href="#"><i class="fa-regular fa-envelope"></i> huynhkanh24@gmail.com</a></li>
+                        <li><a href="#"><i class="fa-solid fa-phone"></i> 0855447477</a></li>
+                        <li><a href="#"><i class="fa-sharp fa-solid fa-location-dot"></i> 470 Trần Đại Nghĩa, Q. Ngũ Hành Sơn, Tp. Đà Nẵng</a>
                         </li>
 
                     </ul>
@@ -14,10 +14,9 @@
                 <div class="footer-col">
                     <h4>TEAM</h4>
                     <ul>
-                        <li><a href="https://www.facebook.com/profile.php?id=100017145340114">Huỳnh Ngọc Khanh</a>
-                        </li>
-                        <li><a href="https://www.facebook.com/profile.php?id=100022727594702">Võ Thiện</a></li>
-                        <li><a href="https://www.facebook.com/profile.php?id=100070373126042">Hồ Thế Bảo</a></li>
+                        <li><a href="">Huỳnh Ngọc Khanh</a></li>
+                        <li><a href="">Võ Phạm Thị Thu Hoa</a></li>
+                       
 
                     </ul>
                 </div>

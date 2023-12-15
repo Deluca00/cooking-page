@@ -1,9 +1,3 @@
-
-
-
-
-
-
 const back_color_menu = document.querySelector('.menu');
 const slider = document.getElementById('slider');
 

@@ -22,9 +22,14 @@
     ?>    
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+<script src="https://use.fontawesome.com/1744f3f671.js"></script>
 <script src="./Assets/js/profo.js"></script>
 <script src="./Assets/js/food.js"></script>
 <script src="./Assets/js/header.js"></script>
 <script src="./Assets/js/contact.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./Assets/js/comment.js"></script>
  
 </html>
