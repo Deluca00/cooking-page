@@ -1,5 +1,5 @@
 <?php 
-$conn = new mysqli('localhost','root','','');
+$conn = new mysqli('localhost','root','','datacookingbooks');
 if($conn)
 {
   // mysqli_query($conn,'SET NAME "UTF8"')  ;
