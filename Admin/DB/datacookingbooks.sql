@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `datacookingbooks`
+CREATE DATABASE datacookingbooks;
+use datacookingbooks;
 --
 
 -- --------------------------------------------------------
@@ -28,9 +30,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `baidangmonan` (
-  `ID_baidang` int(11) NOT NULL,
-  `ID_nguoidung` int(11) DEFAULT NULL,
-  `ID_thucphamchinh` int(11) DEFAULT NULL,
+  `ID_baidang` varchar(255) NOT NULL,
+  `ID_nguoidung` varchar(255) DEFAULT NULL,
+  `ID_thucphamchinh` varchar(255) DEFAULT NULL,
   `Tenmonan` varchar(255) DEFAULT NULL,
   `Motamonan` text DEFAULT NULL,
   `Thoigianchuanbi` int(11) DEFAULT NULL,
@@ -49,7 +51,7 @@ CREATE TABLE `baidangmonan` (
 --
 
 CREATE TABLE `daphuongtien` (
-  `ID_phuongtien` int(11) NOT NULL,
+  `ID_phuongtien` varchar(255) NOT NULL,
   `Url_hinhanh` varchar(255) DEFAULT NULL,
   `Url_video` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -61,7 +63,7 @@ CREATE TABLE `daphuongtien` (
 --
 
 CREATE TABLE `donggopykien` (
-  `ID_donggopykien` int(11) NOT NULL,
+  `ID_donggopykien` varchar(255) NOT NULL,
   `Hovaten` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Baidangcanykien` int(11) DEFAULT NULL,
@@ -75,9 +77,9 @@ CREATE TABLE `donggopykien` (
 --
 
 CREATE TABLE `monandadang` (
-  `ID_monandadang` int(11) NOT NULL,
-  `ID_nguoidung` int(11) DEFAULT NULL,
-  `ID_thucphamchinh` int(11) DEFAULT NULL,
+  `ID_monandadang` varchar(255) NOT NULL,
+  `ID_nguoidung` varchar(255) DEFAULT NULL,
+  `ID_thucphamchinh`varchar(255) DEFAULT NULL,
   `Tenmonan` varchar(255) DEFAULT NULL,
   `Motamonan` text DEFAULT NULL,
   `Thoigianchuanbi` int(11) DEFAULT NULL,
@@ -93,10 +95,10 @@ CREATE TABLE `monandadang` (
 --
 
 CREATE TABLE `monanduocyeuthich` (
-  `ID_monanduocyeuthich` int(11) NOT NULL,
-  `ID_nguoidung` int(11) DEFAULT NULL,
-  `ID_thucphamchinh` int(11) DEFAULT NULL,
-  `ID_baidang` int(11) DEFAULT NULL,
+  `ID_monanduocyeuthich` varchar(255) NOT NULL,
+  `ID_nguoidung` varchar(255) DEFAULT NULL,
+  `ID_thucphamchinh` varchar(255) DEFAULT NULL,
+  `ID_baidang` varchar(255) DEFAULT NULL,
   `Tenmonan` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -107,7 +109,7 @@ CREATE TABLE `monanduocyeuthich` (
 --
 
 CREATE TABLE `nguoidung` (
-  `ID_nguoidung` int(11) NOT NULL,
+  `ID_nguoidung` varchar(255) NOT NULL,
   `Tennguoidung` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Matkhau` varchar(255) DEFAULT NULL,
@@ -121,7 +123,7 @@ CREATE TABLE `nguoidung` (
 --
 
 CREATE TABLE `thucphamchinh` (
-  `ID_thucphamchinh` int(11) NOT NULL,
+  `ID_thucphamchinh` varchar(255) NOT NULL,
   `Tenthucphamchinh` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

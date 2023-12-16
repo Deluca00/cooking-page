@@ -19,6 +19,12 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input type="url" class="form-control" id="url" placeholder=" Link bài viết " name="url" value="" required>
+            </div>
+          </div>
+
           <textarea class="form-control1" rows="10" placeholder="ĐÓNG GÓP Ý KIẾN" name="message" required></textarea>
 
           <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
@@ -35,15 +41,13 @@
         <div class="direct-contact-container">
 
           <ul class="contact-list">
-            <li class="list-item"><i id="icon" class="fa fa-map-marker fa-2x"><span class="contact-text place">Nơi đâu
-                  cx
-                  là nhà</span></i></li>
+            <li class="list-item"><i id="icon" class="fa fa-map-marker fa-2x"><span class="contact-text place">Ý kiến đi đừng ngại</span></i></li>
 
             <li class="list-item"><i id="icon" class="fa fa-phone fa-2x"><span class="contact-text phone"><a
-                    href="tel:1-212-555-5555" title="Gọi ngay">0782087247</a></span></i></li>
+                    href="tel:1-212-555-5555" title="Gọi ngay">088889999</a></span></i></li>
 
             <li class="list-item"><i id="icon" class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a
-                    href="mailto:#" title="Gửi mail">baolathe@gamil.com</a></span></i></li>
+                    href="mailto:#" title="Gửi mail">huynhkanh24@gamil.com</a></span></i></li>
 
           </ul>
 

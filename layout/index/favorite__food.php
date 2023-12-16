@@ -22,10 +22,7 @@
                                     Socola <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
                                 </span>
                             </div>
-
-                            
                             <div class="formf container-popf" id="like1">
-
                                 <div class="headerf" class="text-center">
                                     <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> bánh tart
                                     socola <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
