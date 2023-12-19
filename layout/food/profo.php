@@ -66,7 +66,7 @@
                                                 <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Tôm hấp bia <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
                                             </div>
 
-                                            <div id="wp-content">
+                                            <div id="wp-contentf">
 
                                                 <div id="content">
                                                     <p> Cuối tuần tiệc tùng mà chẳng biết đãi món gì cũng thật là nan giải phải không nào? Với món tôm hấp, bạn chỉ mất 10 phút chế biến là đã có một món ăn hoành tráng, hấp dẫn để chiêu đãi mọi người rồi đấy.
@@ -106,7 +106,7 @@
 
                                             </div>
 
-                                            <div id="footer">
+                                            <div id="footerf">
                                                 <div class="tabs">
                                                     <ul class="nav-tabs">
                                                         <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
