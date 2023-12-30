@@ -158,18 +158,18 @@
                                             <div class="footerf">
                                                 <div class="tabs">
                                                     <ul class="nav-tabs">
-                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
-                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                        <li class="active"><a href="#<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>-1">Chuẩn bị</a></li>
+                                                        <li><a href="#<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>-2">Cách làm</a></li>
                                                     </ul>
                                                     <div class="tab-content">
-                                                        <div id="muc-1" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>-1" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonanhaisan['Thoigianchuanbi'] ?>
                                                             <h1>Nguyên liệu</h1>
                                                             <?php echo $row_baidangmonanhaisan['Nguyenlieu'] ?>
                                                         </div>
 
-                                                        <div id="muc-2" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>-2" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonanhaisan['Thoigianlam'] ?>
                                                             <h1>Công thức :</h1>
@@ -244,7 +244,7 @@
                                     while($row_baidangmonanthit=mysqli_fetch_array($baidangmonanthit)){
                                     
                                     ?>
-                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann <?php echo $row_baidangmonanthit['ID_thucphamchinh'] ?>">
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 thitt <?php echo $row_baidangmonanthit['ID_thucphamchinh'] ?>">
                                         <div class="product">
                                             <div class="product-thum">
                                                 <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonanthit['anhmon'] ?>">
@@ -330,18 +330,18 @@
                                             <div class="footerf">
                                                 <div class="tabs">
                                                     <ul class="nav-tabs">
-                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
-                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                        <li class="active"><a href="#<?php echo $row_baidangmonanthit['ID_baidang'] ?>-1">Chuẩn bị</a></li>
+                                                        <li><a href="#<?php echo $row_baidangmonanthit['ID_baidang'] ?>-2">Cách làm</a></li>
                                                     </ul>
                                                     <div class="tab-content">
-                                                        <div id="muc-1" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonanthit['ID_baidang'] ?>-1" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonanthit['Thoigianchuanbi'] ?>
                                                             <h1>Nguyên liệu</h1>
                                                             <?php echo $row_baidangmonanthit['Nguyenlieu'] ?>
                                                         </div>
 
-                                                        <div id="muc-2" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonanthit['ID_baidang'] ?>-2" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonanthit['Thoigianlam'] ?>
                                                             <h1>Công thức :</h1>
@@ -395,7 +395,7 @@
                                     while($row_baidangmonandiemtam=mysqli_fetch_array($baidangmonandiemtam)){
                                     
                                     ?>
-                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann diemtam >">
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 diemtam >">
                                         <div class="product">
                                             <div class="product-thum">
                                                 <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['anhmon'] ?>">
@@ -481,18 +481,18 @@
                                             <div class="footerf">
                                                 <div class="tabs">
                                                     <ul class="nav-tabs">
-                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
-                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                        <li class="active"><a href="#<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>-1">Chuẩn bị</a></li>
+                                                        <li><a href="#<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>-2">Cách làm</a></li>
                                                     </ul>
                                                     <div class="tab-content">
-                                                        <div id="muc-1" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>-1" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonandiemtam['Thoigianchuanbi'] ?>
                                                             <h1>Nguyên liệu</h1>
                                                             <?php echo $row_baidangmonandiemtam['Nguyenlieu'] ?>
                                                         </div>
 
-                                                        <div id="muc-2" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>-2" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonandiemtam['Thoigianlam'] ?>
                                                             <h1>Công thức :</h1>
@@ -544,7 +544,7 @@
                                     while($row_baidangmonandochay=mysqli_fetch_array($baidangmonandochay)){
                                     
                                     ?>
-                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann diemtam >">
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 dochay >">
                                         <div class="product">
                                             <div class="product-thum">
                                                 <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonandochay['anhmon'] ?>">
@@ -630,18 +630,18 @@
                                             <div class="footerf">
                                                 <div class="tabs">
                                                     <ul class="nav-tabs">
-                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
-                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                        <li class="active"><a href="#<?php echo $row_baidangmonandochay['ID_baidang'] ?>-1">Chuẩn bị</a></li>
+                                                        <li><a href="#<?php echo $row_baidangmonandochay['ID_baidang'] ?>-2">Cách làm</a></li>
                                                     </ul>
                                                     <div class="tab-content">
-                                                        <div id="muc-1" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonandochay['ID_baidang'] ?>-1" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonandochay['Thoigianchuanbi'] ?>
                                                             <h1>Nguyên liệu</h1>
                                                             <?php echo $row_baidangmonandochay['Nguyenlieu'] ?>
                                                         </div>
 
-                                                        <div id="muc-2" class="tab-content-item">
+                                                        <div id="<?php echo $row_baidangmonandochay['ID_baidang'] ?>-2" class="tab-content-item">
                                                             <h1>Thời gian</h1>
                                                             <?php echo $row_baidangmonandochay['Thoigianlam'] ?>
                                                             <h1>Công thức :</h1>

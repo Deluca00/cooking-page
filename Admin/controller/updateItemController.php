@@ -18,7 +18,7 @@
         $image =rand(1000,1000000).".".$ext;
         $final_image=$location. $image;
         if (in_array($ext, $valid_extensions)) {
-            $path = UPLOAD_PATH . $image;
+            $path = UPLOAD_PATH. $image;
             move_uploaded_file($tmp, $dir.$image);
         }
     }else{
