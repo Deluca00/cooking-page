@@ -6,9 +6,9 @@
                     <a href="./index.html"><img class="imglogo logo" src="./Assets/Images/logo.png" alt="logo-hat-chef"></a>
                     <a href=""><img class="img-hidden" src="" alt="logo-hat-chef"></a>
                     <ul id="nav">
-                        <li><a href="../../index.php">TRANG CHỦ</a></li>
-                        <li><a href="../../food.php">MÓN ĂN</a></li>
-                        <li><a href="../../contactindex.php">TƯƠNG TÁC</a></li>
+                        <li><a href="./index.php">TRANG CHỦ</a></li>
+                        <li><a href="./food.php">MÓN ĂN</a></li>
+                        <li><a href="./contactindex.php">TƯƠNG TÁC</a></li>
                     </ul>
                 </div>
                 <!-- end: header -->

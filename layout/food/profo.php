@@ -1,21 +1,33 @@
+
 <div id="pofo">
     <div id="filter">
         <button class="btn active" onclick="filterSelection('ingredient','all')">ALL</button>
-        <button class="btn" onclick="filterSelection('ingredient','haisan')">HẢI SẢN</button>
-        <button class="btn" onclick="filterSelection('ingredient','thit')">THỊT</button>
-        <button class="btn" onclick="filterSelection('ingredient','diemtam')">ĐIỂM TÂM</button>
-        <button class="btn" onclick="filterSelection('ingredient','dochay')">ĐỒ CHAY</button>
+        <?php 
+               $thucphamchinh = thucphamchinh($conn);
+               while($row_thucphamchinh=mysqli_fetch_array($thucphamchinh)){
 
+        ?>
+        
+        <button class="btn" onclick="filterSelection('ingredient','<?php echo $row_thucphamchinh['ID_thucphamchinh'] ?>')"><?php echo $row_thucphamchinh['Tenthucphamchinh'] ?></button>
+    <?php
+               }
+    ?>   
     </div>
     <div id="minimenu">
         <i class="fa-solid fa-bars"></i>
         <ul class="sub-menu">
             <li><a onclick="filterSelection('ingredient','all')">ALL</a></li>
-            <li><a onclick="filterSelection('ingredient','haisan')">HẢI SẢN</a></li>
-            <li><a onclick="filterSelection('ingredient','thit')">THỊT</a></li>
-            <li><a onclick="filterSelection('ingredient','diemtam')">ĐIỂM TÂM</a></li>
-            <li><a onclick="filterSelection('ingredient','dochay')">ĐỒ CHAY</a></li>
+            <?php 
+               $thucphamchinh = thucphamchinh($conn);
+               while($row_thucphamchinh=mysqli_fetch_array($thucphamchinh)){
+
+             ?>
+            <li><a onclick="filterSelection('ingredient','<?php echo $row_thucphamchinh['ID_thucphamchinh'] ?>')"><?php echo $row_thucphamchinh['Tenthucphamchinh'] ?></a></li>
+             <?php
+               }
+             ?>   
         </ul>
+       
     </div>
     <section id="pof">
         <div class="row">
@@ -62,41 +74,41 @@
                                             </div>
                                         </div>
                                         <div class="formf container-popf" id="tomhapbia">
-                                            <div id="header" class="text-center">
+                                            <div class="headerf" class="text-center">
                                                 <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Tôm hấp bia <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
                                             </div>
 
-                                            <div id="wp-contentf">
+                                            <div class="wp-contentf">
 
-                                                <div id="content">
+                                                <div class="contentf">
                                                     <p> Cuối tuần tiệc tùng mà chẳng biết đãi món gì cũng thật là nan giải phải không nào? Với món tôm hấp, bạn chỉ mất 10 phút chế biến là đã có một món ăn hoành tráng, hấp dẫn để chiêu đãi mọi người rồi đấy.
 
                                                     </p>
                                                 </div>
 
-                                                <div id="sidebar">
+                                                <div class="sidebar">
                                                     <div class="anh">
                                                         <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
                                                             <swiper-slide>
-                                                                <img src="../Assets/images 2/tomhapbia.jpg" title="Tôm hấp bia" />
+                                                                <img src="./Assets/images 2/tomhapbia.jpg" title="Tôm hấp bia" />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="../Assets/images 2/tomsu.jpg" title="Tôm sú" />
+                                                                <img src="./Assets/images 2/tomsu.jpg" title="Tôm sú" />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="../Assets/images 2/sả.jpg" title="Sả" />
+                                                                <img src="./Assets/images 2/sả.jpg" title="Sả" />
                                                             </swiper-slide>
                                                         </swiper-container>
 
                                                         <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true" watch-slides-progress="true">
                                                             <swiper-slide>
-                                                                <img src="../Assets/images 2/tomhapbia.jpg" title="Tôm hấp bia" />
+                                                                <img src="./Assets/images 2/tomhapbia.jpg" title="Tôm hấp bia" />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="../Assets/images 2/tomsu.jpg" title="Tôm sú" />
+                                                                <img src="./Assets/images 2/tomsu.jpg" title="Tôm sú" />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="../Assets/images 2/sả.jpg" title="Sả" />
+                                                                <img src="./Assets/images 2/sả.jpg" title="Sả" />
                                                             </swiper-slide>
                                                         </swiper-container>
 
@@ -106,7 +118,7 @@
 
                                             </div>
 
-                                            <div id="footerf">
+                                            <div class="footerf">
                                                 <div class="tabs">
                                                     <ul class="nav-tabs">
                                                         <li class="active"><a href="#muc-1">Chuẩn bị</a></li>

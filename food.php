@@ -12,6 +12,7 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <title>Document</title>
 </head>
+<?php include "./Admin/data/connect.php"   ?>
 <body>
     <div id="meal">
     <?php 
@@ -28,7 +29,7 @@
 <script src="./Assets/js/profo.js"></script>
 <script src="./Assets/js/food.js"></script>
 <script src="./Assets/js/header.js"></script>
-<script src="./Assets/js/contact.js"></script>
+<script src="./Assets/js/layout.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./Assets/js/comment.js"></script>
  

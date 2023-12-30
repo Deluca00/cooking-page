@@ -318,10 +318,10 @@ margin-bottom: 20px;
 .formf {
     display: none;
     position: fixed;
-    right: 15px;
+    right: 1px;
     left: 15px;
-    top: 30px;
-    bottom: 40px;
+    top: 15px;
+    bottom: 25px;
     border-radius: 10px;
     background-color: bisque;
     opacity: 0.95;
@@ -383,7 +383,7 @@ margin-bottom: 20px;
     flex-basis: 60%;
 }
 
-.sidebar {
+.formf .sidebar {
     order: 1;
     flex-basis: 40%;
    
@@ -397,13 +397,13 @@ margin-bottom: 20px;
 
 }
 
-.text-center {
+.formf .text-center {
     text-align: center;
 }
 
 
 /*phan footerf*/
-.tabs .nav-tabs{
+.formf .tabs .nav-tabs{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -415,11 +415,11 @@ margin-bottom: 20px;
 }
 
 
-.tabs  .nav-tabs li{
+.formf .tabs  .nav-tabs li{
     margin-right: 15px;
 }
 
-.tabs  .nav-tabs li a {
+.formf .tabs  .nav-tabs li a {
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -430,7 +430,7 @@ margin-bottom: 20px;
     font-size: 30px;
 
 }
-.tabs  .nav-tabs li a::after{
+.formf .tabs  .nav-tabs li a::after{
     content: "";
     height: 3px;
     width: 100%;
@@ -441,22 +441,23 @@ margin-bottom: 20px;
     align-items: center;
 
 }
-.tabs .nav-tabs li.active a::after ,.nav-tabs li:hover a::after{
-    background: orange;
+.formf .tabs .nav-tabs li.activef a::after ,.nav-tabs li:hover a::after{
+    background: orange !important;
 }
 
 /*tab-content*/
 
-.tabs .tab-content{
+.formf .tabs .tab-content{
+    text-align: left;
     padding: 20px ;
 }
 
 /*sidebar*/
-.anh {
+.formf .anh {
   position: relative;
   height: 100%;
 }
-.anh {
+.formf .anh {
   
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -465,17 +466,17 @@ margin-bottom: 20px;
   padding: 0;
 }
 
-.anh {
+.formf .anh {
   background:#FFEBCD;
   color: #000;
 }
 
-.anh swiper-container {
+.formf .anh swiper-container {
   width: 100%;
   height: 100%;
 }
 
-.anh swiper-slide {
+.formf .anh swiper-slide {
   text-align: center;
   font-size: 18px;
   
@@ -484,7 +485,7 @@ margin-bottom: 20px;
   align-items: center;
 }
 
-.anh swiper-slide img {
+.formf .anh swiper-slide img {
   
   width: 100%;
   height: 100%;
@@ -493,76 +494,76 @@ margin-bottom: 20px;
 
 
 
-.anh swiper-container {
+.formf .anh swiper-container {
   width: 450px;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.anh swiper-slide {
+.formf .anh swiper-slide {
   background-size: cover;
   background-position: center;
 }
 
-.anh .mySwiper {
+ .formf .anh .mySwiper {
   height: 330px;
   width: 500px;
   
 }
 
-.anh .mySwiper2 {
+.formf .anh .mySwiper2 {
   height: 97px;
   box-sizing: border-box;
   padding: 10px 0;
 }
 
-.anh .mySwiper3 {
+.formf .anh .mySwiper3 {
     height: 97px;
     box-sizing: border-box;
     padding: 10px 0;
 }
-.anh .mySwiper4 {
+.formf .anh .mySwiper4 {
     height: 97px;
     box-sizing: border-box;
     padding: 10px 0;
 }
 
-.anh .mySwiper2 swiper-slide {
+.formf .anh .mySwiper2 swiper-slide {
     width: 35%;
     height: 100%;
     opacity: 0.4;
   } 
-.anh .mySwiper3 swiper-slide {
+  .formf .anh .mySwiper3 swiper-slide {
     width: 35%;
     height: 100%;
     opacity: 0.4;
   }
-.anh .mySwiper4 swiper-slide {
+  .formf .anh .mySwiper4 swiper-slide {
     width: 35%;
     height: 100%;
     opacity: 0.4;
   }
 
-.anh .mySwiper2 .swiper-slide-thumb-active {
+  .formf .anh .mySwiper2 .swiper-slide-thumb-active {
   opacity: 1;
 }
 
-.anh .mySwiper3 .swiper-slide-thumb-active {
+.formf .anh .mySwiper3 .swiper-slide-thumb-active {
     opacity: 1;
   }
-.anh .mySwiper4 .swiper-slide-thumb-active {
+  .formf .anh .mySwiper4 .swiper-slide-thumb-active {
     opacity: 1;
   }
 
-.anh swiper-slide img {
+  .formf .anh swiper-slide img {
  
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.video{
+.formf .video{
   display: flex;
     justify-content: center;
     align-items: center;
