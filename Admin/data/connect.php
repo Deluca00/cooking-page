@@ -7,14 +7,28 @@ function thucphamchinh($conn){
 
 }
 
-function thanhphantheotl($conn,$idtl){
+function baidangmonan($conn){
 
-$query =" SELECT * FROM thanhphanmenu WHERE idtl = $idtl " ;
+$query =" SELECT * FROM baidangmonan " ;
 $result = mysqli_query($conn,$query);
   return $result;
 
 }
 
+function monanuuthic($conn){
 
+  $query =" SELECT * FROM baidangmonan WHERE idtl " ;
+  $result = mysqli_query($conn,$query);
+    return $result;
+  
+  }
+
+  function thanhphantheotl($conn){
+
+    $query =" SELECT * FROM baidangmonan WHERE idtl " ;
+    $result = mysqli_query($conn,$query);
+      return $result;
+    
+    }
 
 ?>
