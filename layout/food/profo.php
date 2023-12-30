@@ -1,7 +1,6 @@
 
 <div id="pofo">
     <div id="filter">
-        <button class="btn active" onclick="filterSelection('ingredient','all')">ALL</button>
         <?php 
                $thucphamchinh = thucphamchinh($conn);
                while($row_thucphamchinh=mysqli_fetch_array($thucphamchinh)){
@@ -16,7 +15,6 @@
     <div id="minimenu">
         <i class="fa-solid fa-bars"></i>
         <ul class="sub-menu">
-            <li><a onclick="filterSelection('ingredient','all')">ALL</a></li>
             <?php 
                $thucphamchinh = thucphamchinh($conn);
                while($row_thucphamchinh=mysqli_fetch_array($thucphamchinh)){
@@ -41,52 +39,61 @@
                         </div>
                     </div>
                 </div>
-                <div class="form container-pop" id="formhaisan">
+                 <div class="form container-pop" id="formhaisan">
                     <section id="sanpham" class="section_tab_product">
                         <div class="bg_module">
                             <div class="container">
                                 <div id="filter">
-                                    <button class="btn active" onclick="filterSelection('haisan','all')">All</button>
                                     <?php 
-                                $thucphamchinh = thucphamchinh($conn);
-                                while($row_thucphamchinh=mysqli_fetch_array($thucphamchinh)){
+                                $thucphamchinhhaisan = thucphamchinhhaisan($conn);
+                                while($row_thucphamchinhhaisan=mysqli_fetch_array( $thucphamchinhhaisan)){
 
                             ?>
-                                    <button class="btn" onclick="filterSelection('haisan','tom')">TÔM</button>
+                                    <button class="btn" onclick="filterSelection('haisann','<?php echo $row_thucphamchinhhaisan['ID_thucphamchinh2'] ?>') "><?php echo $row_thucphamchinhhaisan['Tenthucphamchinh2'] ?></button>
 
                             <?php   }  ?>
                                 </div>
                                 <div id="minimenu">
                                     <i class="fa-solid fa-bars"></i>
                                     <ul class="sub-menu">
-                                        <li><a onclick="filterSelection('haisan','all')">All</a></li>
-                                        <li><a onclick="filterSelection('haisan','tom')">TÔM</a></li>
-                                        <li><a onclick="filterSelection('haisan','cahoi')">CÁ HỒI</a></li>
-                                        <li><a onclick="filterSelection('haisan','muc')">MỰC</a></li>
+                                    <?php 
+                                $thucphamchinhhaisan = thucphamchinhhaisan($conn);
+                                while($row_thucphamchinhhaisan=mysqli_fetch_array( $thucphamchinhhaisan)){
+
+                                 ?>
+                                        <li><a onclick="filterSelection('haisann','<?php echo $row_thucphamchinhhaisan['ID_thucphamchinh2'] ?>')"><?php echo $row_thucphamchinhhaisan['Tenthucphamchinh2'] ?></a></li>
+                             <?php   }  ?>
                                     </ul>
                                 </div>
                                 <div class="row container-mini">
-                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisan tom">
+                                    <?php 
+                                    
+                                    $baidangmonanhaisan = baidangmonanhaisan($conn);
+                                    while($row_baidangmonanhaisan=mysqli_fetch_array($baidangmonanhaisan)){
+                                    
+                                    ?>
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann <?php echo $row_baidangmonanhaisan['ID_thucphamchinh'] ?>">
                                         <div class="product">
                                             <div class="product-thum">
-                                                <img class="lazyload" src="./Assets/images 2/tomhapbia.jpg">
-                                                <h3>Tôm hấp bia</h3>
+                                                <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['anhmon'] ?>">
+                                                <h3><?php echo $row_baidangmonanhaisan['Tenmonan'] ?></h3>
+
                                                 <div class="overlay">
                                                     <div class="hover_text">
-                                                        <i class="fa-sharp fa-solid fa-plus" onclick="openForm('tomhapbia')"></i></a>
+                                                        <i class="fa-sharp fa-solid fa-plus" onclick="openForm('<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>')"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="formf container-popf" id="tomhapbia">
+                                        <div class="formf container-popf" id="<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>">
                                             <div class="headerf" class="text-center">
-                                                <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> Tôm hấp bia <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                                <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> <?php echo $row_baidangmonanhaisan['Tenmonan'] ?> <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
                                             </div>
 
                                             <div class="wp-contentf">
 
                                                 <div class="contentf">
-                                                    <p> Cuối tuần tiệc tùng mà chẳng biết đãi món gì cũng thật là nan giải phải không nào? Với món tôm hấp, bạn chỉ mất 10 phút chế biến là đã có một món ăn hoành tráng, hấp dẫn để chiêu đãi mọi người rồi đấy.
+                                                    <p> <?php echo $row_baidangmonanhaisan['Motamonan'] ?>
 
                                                     </p>
                                                 </div>
@@ -95,25 +102,50 @@
                                                     <div class="anh">
                                                         <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
                                                             <swiper-slide>
-                                                                <img src="./Assets/images 2/tomhapbia.jpg" title="Tôm hấp bia" />
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['anhmon'] ?> " />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="./Assets/images 2/tomsu.jpg" title="Tôm sú" />
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu1'] ?> " />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="./Assets/images 2/sả.jpg" title="Sả" />
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu2'] ?> " />
                                                             </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                            
                                                         </swiper-container>
 
                                                         <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true" watch-slides-progress="true">
-                                                            <swiper-slide>
-                                                                <img src="./Assets/images 2/tomhapbia.jpg" title="Tôm hấp bia" />
+                                                        <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['anhmon'] ?> " />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="./Assets/images 2/tomsu.jpg" title="Tôm sú" />
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu1'] ?> " />
                                                             </swiper-slide>
                                                             <swiper-slide>
-                                                                <img src="./Assets/images 2/sả.jpg" title="Sả" />
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanhaisan['nguyenlieu6'] ?> " />
                                                             </swiper-slide>
                                                         </swiper-container>
 
@@ -132,32 +164,32 @@
                                                     <div class="tab-content">
                                                         <div id="muc-1" class="tab-content-item">
                                                             <h1>Thời gian</h1>
-                                                            <p>10 phút</p>
+                                                            <?php echo $row_baidangmonanhaisan['Thoigianchuanbi'] ?>
                                                             <h1>Nguyên liệu</h1>
-                                                            <p>
-                                                                + 500g tôm sú <br>
-                                                                + 2 nhánh sả <br>
-                                                                + 1 lon bia <br>
-                                                                + Gia vị....
-                                                            </p>
+                                                            <?php echo $row_baidangmonanhaisan['Nguyenlieu'] ?>
                                                         </div>
 
                                                         <div id="muc-2" class="tab-content-item">
                                                             <h1>Thời gian</h1>
-                                                            <p>20 phút</p>
+                                                            <?php echo $row_baidangmonanhaisan['Thoigianlam'] ?>
                                                             <h1>Công thức :</h1>
-                                                            <p>Bước 1: Tôm cắt râu, kiếm nhưng không bỏ đầu, rút chỉ đen, rửa sạch, để ráo nước. Ướp với 1 thìa muối, 1 thìa tiêu tầm 15 phút. Sả rửa sạch, thái mỏng. </p>
-                                                            <p>Bước 2: Cho ½ lon bia vào nồi, sau đó cho tôm và sả vào đảo đều. Hấp trong 5 phút là tôm chín. Món này ăn kèm rau xà lách, cà chua chấm với nước cốt chanh càng thêm đậm đà.</p>
+                                                            <?php echo $row_baidangmonanhaisan['Congthuc'] ?>
 
-                                                            <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/R5m-wfOSPc4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                                            <div class="video"><iframe width="560" height="315" src="<?php echo $row_baidangmonanhaisan['Video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('tomhapbia')"></i>
+                                            <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('<?php echo $row_baidangmonanhaisan['ID_baidang'] ?>')"></i>
 
                                         </div>
                                     </div>
+
+                                    <?php 
+                                    
+                                                            }
+                                    
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -165,6 +197,481 @@
                     <i class="fa-solid fa-x" id="close-cart" aria-hidden="true" onclick="closeForm('formhaisan')"></i>
                 </div>
             </div>
+
+
+
+            
+            <div class="col-md-4 mix cat1 cat4 ingredient thit top10">
+                <div class="portfolio">
+                    <img src="./Assets/Images/thit.jpg" alt="">
+  
+                    <div class="overlay">
+                        <div class="hover_text">
+                            <i class="fa-sharp fa-solid fa-plus" onclick="openForm('formthit')"></i>
+                        </div>
+                    </div>
+                </div>
+                 <div class="form container-pop" id="formthit">
+                    <section id="sanpham" class="section_tab_product">
+                        <div class="bg_module">
+                            <div class="container">
+                                <div id="filter">
+                                    <?php 
+                                $thucphamchinhthit = thucphamchinhthit($conn);
+                                while($row_thucphamchinhthit=mysqli_fetch_array( $thucphamchinhthit)){
+
+                            ?>
+                                    <button class="btn" onclick="filterSelection('thitt','<?php echo $row_thucphamchinhthit['ID_thucphamchinh2'] ?>') "><?php echo $row_thucphamchinhthit['Tenthucphamchinh2'] ?></button>
+
+                            <?php   }  ?>
+                                </div>
+                                <div id="minimenu">
+                                    <i class="fa-solid fa-bars"></i>
+                                    <ul class="sub-menu">
+                                    <?php 
+                                $thucphamchinhthit = thucphamchinhthit($conn);
+                                while($row_thucphamchinhthit=mysqli_fetch_array( $thucphamchinhthit)){
+
+                                 ?>
+                                        <li><a onclick="filterSelection('thitt','<?php echo $row_thucphamchinhthit['ID_thucphamchinh2'] ?>')"><?php echo $row_thucphamchinhthit['Tenthucphamchinh2'] ?></a></li>
+                             <?php   }  ?>
+                                    </ul>
+                                </div>
+                                <div class="row container-mini">
+                                    <?php 
+                                    
+                                    $baidangmonanthit = baidangmonanthit($conn);
+                                    while($row_baidangmonanthit=mysqli_fetch_array($baidangmonanthit)){
+                                    
+                                    ?>
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann <?php echo $row_baidangmonanthit['ID_thucphamchinh'] ?>">
+                                        <div class="product">
+                                            <div class="product-thum">
+                                                <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonanthit['anhmon'] ?>">
+                                                <h3><?php echo $row_baidangmonanthit['Tenmonan'] ?></h3>
+
+                                                <div class="overlay">
+                                                    <div class="hover_text">
+                                                        <i class="fa-sharp fa-solid fa-plus" onclick="openForm('<?php echo $row_baidangmonanthit['ID_baidang'] ?>')"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="formf container-popf" id="<?php echo $row_baidangmonanthit['ID_baidang'] ?>">
+                                            <div class="headerf" class="text-center">
+                                                <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> <?php echo $row_baidangmonanthit['Tenmonan'] ?> <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                            </div>
+
+                                            <div class="wp-contentf">
+
+                                                <div class="contentf">
+                                                    <p> <?php echo $row_baidangmonanthit['Motamonan'] ?>
+
+                                                    </p>
+                                                </div>
+
+                                                <div class="sidebar">
+                                                    <div class="anh">
+                                                        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['anhmon'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu1'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                            
+                                                        </swiper-container>
+
+                                                        <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                                                        <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['anhmon'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu1'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonanthit['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                        </swiper-container>
+
+                                                        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="footerf">
+                                                <div class="tabs">
+                                                    <ul class="nav-tabs">
+                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
+                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div id="muc-1" class="tab-content-item">
+                                                            <h1>Thời gian</h1>
+                                                            <?php echo $row_baidangmonanthit['Thoigianchuanbi'] ?>
+                                                            <h1>Nguyên liệu</h1>
+                                                            <?php echo $row_baidangmonanthit['Nguyenlieu'] ?>
+                                                        </div>
+
+                                                        <div id="muc-2" class="tab-content-item">
+                                                            <h1>Thời gian</h1>
+                                                            <?php echo $row_baidangmonanthit['Thoigianlam'] ?>
+                                                            <h1>Công thức :</h1>
+                                                            <?php echo $row_baidangmonanthit['Congthuc'] ?>
+
+                                                            <div class="video"><iframe width="560" height="315" src="<?php echo $row_baidangmonanthit['Video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('<?php echo $row_baidangmonanthit['ID_baidang'] ?>')"></i>
+
+                                        </div>
+                                    </div>
+
+                                    <?php 
+                                    
+                                                            }
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <i class="fa-solid fa-x" id="close-cart" aria-hidden="true" onclick="closeForm('formthit')"></i>
+                </div>
+            </div>
+          
+
+
+
+            <div class="col-md-4 mix cat1 cat4 ingredient diemtam top10">
+                <div class="portfolio">
+                    <img src="./Assets/Images/diemtam.jpg" alt="">
+  
+                    <div class="overlay">
+                        <div class="hover_text">
+                            <i class="fa-sharp fa-solid fa-plus" onclick="openForm('formdiemtam')"></i>
+                        </div>
+                    </div>
+                </div>
+                 <div class="form container-pop" id="formdiemtam">
+                    <section id="sanpham" class="section_tab_product">
+                        <div class="bg_module">
+                            <div class="container">
+                                
+                                <div class="row container-mini">
+                                    <?php 
+                                    
+                                    $baidangmonandiemtam = baidangmonandiemtam($conn);
+                                    while($row_baidangmonandiemtam=mysqli_fetch_array($baidangmonandiemtam)){
+                                    
+                                    ?>
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann diemtam >">
+                                        <div class="product">
+                                            <div class="product-thum">
+                                                <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['anhmon'] ?>">
+                                                <h3><?php echo $row_baidangmonandiemtam['Tenmonan'] ?></h3>
+
+                                                <div class="overlay">
+                                                    <div class="hover_text">
+                                                        <i class="fa-sharp fa-solid fa-plus" onclick="openForm('<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>')"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="formf container-popf" id="<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>">
+                                            <div class="headerf" class="text-center">
+                                                <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> <?php echo $row_baidangmonandiemtam['Tenmonan'] ?> <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                            </div>
+
+                                            <div class="wp-contentf">
+
+                                                <div class="contentf">
+                                                    <p> <?php echo $row_baidangmonandiemtam['Motamonan'] ?>
+
+                                                    </p>
+                                                </div>
+
+                                                <div class="sidebar">
+                                                    <div class="anh">
+                                                        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['anhmon'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu1'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                            
+                                                        </swiper-container>
+
+                                                        <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                                                        <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['anhmon'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu1'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandiemtam['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                        </swiper-container>
+
+                                                        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="footerf">
+                                                <div class="tabs">
+                                                    <ul class="nav-tabs">
+                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
+                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div id="muc-1" class="tab-content-item">
+                                                            <h1>Thời gian</h1>
+                                                            <?php echo $row_baidangmonandiemtam['Thoigianchuanbi'] ?>
+                                                            <h1>Nguyên liệu</h1>
+                                                            <?php echo $row_baidangmonandiemtam['Nguyenlieu'] ?>
+                                                        </div>
+
+                                                        <div id="muc-2" class="tab-content-item">
+                                                            <h1>Thời gian</h1>
+                                                            <?php echo $row_baidangmonandiemtam['Thoigianlam'] ?>
+                                                            <h1>Công thức :</h1>
+                                                            <?php echo $row_baidangmonandiemtam['Congthuc'] ?>
+
+                                                            <div class="video"><iframe width="560" height="315" src="<?php echo $row_baidangmonandiemtam['Video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('<?php echo $row_baidangmonandiemtam['ID_baidang'] ?>')"></i>
+
+                                        </div>
+                                    </div>
+
+                                    <?php 
+                                    
+                                                            }
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <i class="fa-solid fa-x" id="close-cart" aria-hidden="true" onclick="closeForm('formdiemtam')"></i>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mix cat1 cat4 ingredient dochaytop10">
+                <div class="portfolio">
+                    <img src="./Assets/Images/monchay.jpg" alt="">
+  
+                    <div class="overlay">
+                        <div class="hover_text">
+                            <i class="fa-sharp fa-solid fa-plus" onclick="openForm('formdochay')"></i>
+                        </div>
+                    </div>
+                </div>
+                 <div class="form container-pop" id="formdochay">
+                    <section id="sanpham" class="section_tab_product">
+                        <div class="bg_module">
+                            <div class="container">
+                                
+                                <div class="row container-mini">
+                                    <?php 
+                                    
+                                    $baidangmonandochay = baidangmonandochay($conn);
+                                    while($row_baidangmonandochay=mysqli_fetch_array($baidangmonandochay)){
+                                    
+                                    ?>
+                                    <div class="col-xl-3 col-lg-5 col-sm-15 haisann diemtam >">
+                                        <div class="product">
+                                            <div class="product-thum">
+                                                <img class="lazyload" src="./Assets/images 2/<?php echo $row_baidangmonandochay['anhmon'] ?>">
+                                                <h3><?php echo $row_baidangmonandochay['Tenmonan'] ?></h3>
+
+                                                <div class="overlay">
+                                                    <div class="hover_text">
+                                                        <i class="fa-sharp fa-solid fa-plus" onclick="openForm('<?php echo $row_baidangmonandochay['ID_baidang'] ?>')"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="formf container-popf" id="<?php echo $row_baidangmonandochay['ID_baidang'] ?>">
+                                            <div class="headerf" class="text-center">
+                                                <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i> <?php echo $row_baidangmonandochay['Tenmonan'] ?> <i class="fa-sharp fa-solid fa-utensils" style="color: #fe0101;"></i>
+                                            </div>
+
+                                            <div class="wp-contentf">
+
+                                                <div class="contentf">
+                                                    <p> <?php echo $row_baidangmonandochay['Motamonan'] ?>
+
+                                                    </p>
+                                                </div>
+
+                                                <div class="sidebar">
+                                                    <div class="anh">
+                                                        <swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper" thumbs-swiper=".mySwiper2" loop="true" space-between="10" navigation="true">
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['anhmon'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu1'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                            
+                                                        </swiper-container>
+
+                                                        <swiper-container class="mySwiper2" loop="true" space-between="10" slides-per-view="4" free-mode="true" watch-slides-progress="true">
+                                                        <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['anhmon'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu1'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu2'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu3'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu4'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu5'] ?> " />
+                                                            </swiper-slide>
+                                                            <swiper-slide>
+                                                                <img src="./Assets/images 2/<?php echo $row_baidangmonandochay['nguyenlieu6'] ?> " />
+                                                            </swiper-slide>
+                                                        </swiper-container>
+
+                                                        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="footerf">
+                                                <div class="tabs">
+                                                    <ul class="nav-tabs">
+                                                        <li class="active"><a href="#muc-1">Chuẩn bị</a></li>
+                                                        <li><a href="#muc-2">Cách làm</a></li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div id="muc-1" class="tab-content-item">
+                                                            <h1>Thời gian</h1>
+                                                            <?php echo $row_baidangmonandochay['Thoigianchuanbi'] ?>
+                                                            <h1>Nguyên liệu</h1>
+                                                            <?php echo $row_baidangmonandochay['Nguyenlieu'] ?>
+                                                        </div>
+
+                                                        <div id="muc-2" class="tab-content-item">
+                                                            <h1>Thời gian</h1>
+                                                            <?php echo $row_baidangmonandochay['Thoigianlam'] ?>
+                                                            <h1>Công thức :</h1>
+                                                            <?php echo $row_baidangmonandochay['Congthuc'] ?>
+
+                                                            <div class="video"><iframe width="560" height="315" src="<?php echo $row_baidangmonandochay['Video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <i class="fa-solid fa-x" id="close-cart" onclick="closeForm('<?php echo $row_baidangmonandochay['ID_baidang'] ?>')"></i>
+
+                                        </div>
+                                    </div>
+
+                                    <?php 
+                                    
+                                                            }
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <i class="fa-solid fa-x" id="close-cart" aria-hidden="true" onclick="closeForm('formdochay')"></i>
+                </div>
+            </div>
+
+
+
         </div>
     </section>
 </div>

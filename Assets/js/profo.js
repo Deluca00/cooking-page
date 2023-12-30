@@ -8,8 +8,8 @@ function closeForm(formId) {
 
 // init show all item
 filterSelection("ingredient", "all");
-filterSelection("haisan", "all");
-filterSelection("thit", "all");
+filterSelection("haisann", "all");
+filterSelection("thitt", "all");
 // function handle filter
 function filterSelection(section, type) {
     var x, i;

@@ -6,15 +6,49 @@ function thucphamchinh($conn){
   return $result;
 
 }
+function thucphamchinhhaisan($conn){
+  $query = "SELECT * FROM `thucphamchinh` WHERE cap= 2 ";
+  $result = mysqli_query($conn,$query);
+  return $result;
 
-function baidangmonan($conn){
+}
+function thucphamchinhthit($conn){
+  $query = "SELECT * FROM `thucphamchinh` WHERE cap= 3 ";
+  $result = mysqli_query($conn,$query);
+  return $result;
 
-$query =" SELECT * FROM baidangmonan " ;
+}
+function baidangmonanhaisan($conn){
+
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('tom', 'cahoi', 'muc')";
 $result = mysqli_query($conn,$query);
   return $result;
 
 }
 
+function baidangmonanthit($conn){
+
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('thitheo', 'thitbo')";
+$result = mysqli_query($conn,$query);
+  return $result;
+
+}
+
+function baidangmonandiemtam($conn){
+
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('diemtam')";
+$result = mysqli_query($conn,$query);
+  return $result;
+
+}
+
+function baidangmonandochay($conn){
+
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('dochay')";
+$result = mysqli_query($conn,$query);
+  return $result;
+
+}
 function monanuuthic($conn){
 
   $query =" SELECT * FROM baidangmonan WHERE idtl " ;
