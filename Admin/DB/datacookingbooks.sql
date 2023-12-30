@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Dec 30, 2023 at 06:09 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
+=======
+-- Generation Time: Dec 30, 2023 at 02:47 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+>>>>>>> d18c7a5e0ef9447008431313682ddb020ccdae5f
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -19,6 +25,8 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `datacookingbooks`
+CREATE DATABASE datacookingbooks;
+use datacookingbooks;
 --
 
 -- --------------------------------------------------------
