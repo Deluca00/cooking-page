@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 05:39 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 30, 2023 at 02:47 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -73,6 +73,115 @@ INSERT INTO `baidangmonan` (`ID_baidang`, `ID_nguoidung`, `ID_thucphamchinh`, `T
 ('Tomhapbia', 'Huỳnh Ngọc Khanh', 'tom', 'Tôm hấp bia', 'tomhapbia.jpg', 'tomsu.jpg', 'sả.jpg', '', '', '', '', 'Cuối tuần tiệc tùng mà chẳng biết đãi món gì cũng thật là nan giải phải không nào? Với món tôm hấp, bạn chỉ mất 10 phút chế biến là đã có một món ăn hoành tráng, hấp dẫn để chiêu đãi mọi người rồi đấy.\r\n', '<h1>Thời gian</h1>\r\n<p>10 phút</p>', '<h1>Nguyên liệu</h1>\r\n                        <p> \r\n                            + 500g tôm sú <br>\r\n                            + 2 nhánh sả <br>\r\n                            + 1 lon bia <br>\r\n                            + Gia vị....\r\n</p>', '<h1>Thời gian</h1>\r\n<p>20 phút</p>', '<h1>Công thức :</h1>\r\n                        <p>Bước 1: Tôm cắt râu, kiếm nhưng không bỏ đầu, rút chỉ đen, rửa sạch, để ráo nước. Ướp với 1 thìa muối, 1 thìa tiêu tầm 15 phút. Sả rửa sạch, thái mỏng. </p>\r\n                        <p>Bước 2: Cho ½ lon bia vào nồi, sau đó cho tôm và sả vào đảo đều. Hấp trong 5 phút là tôm chín. Món này ăn kèm rau xà lách, cà chua chấm với nước cốt chanh càng thêm đậm đà.</p>\r\n                        ', 'https://www.youtube.com/embed/R5m-wfOSPc4', 'accept'),
 ('xoiman', 'Huỳnh Ngọc Khanh', 'diemtam', 'Xôi Mặn', 'xoiman1.png', 'xoiman2.png', 'xoiman3.png', 'xoiman4.png', 'xoiman5.png', '', '', 'Đây là món xôi ăn kèm với các loại nước sốt. Vị dẻo thơm của gạo nếp quyện vào phần nước dùng đậm đà và các loại thịt thơm ngon như: xá xíu, thịt gà, ruốc, lạp xưởng … đều khiến cho những tín đồ ẩm thực phải mê mẩn.', '<h1>Thời gian</h1>\r\n<p>10 phút</p>', '<h1>Nguyên liệu</h1>\r\n                        <p> - 500 g nếp,<br>\r\n                            - 2 cây lạp xưởng, nước tương. <br>\r\n                            - 100 g chà bông, 100 g chả lụa, 100 g pate gan, hành lá. <br>\r\n</p>', '<h1>Thời gian</h1>\r\n<p>20 phút</p>', '<h1>Công thức :</h1>\r\n                        <p> - Nếp ngâm mềm, vo sạch rồi đem hấp chín. <br>\r\n                            - Lạp xưởng nướng chín, thái lát mỏng. Chả lụa thái sợi. Hành lá thái nhỏ, phi làm mỡ hành. <br>\r\n                            - Xôi hấp chín cho ra đĩa, xịt ít nước tương rồi trét một lớp pate. Tiếp đến cho lạp xưởng, chà bông, chả lụa. Cuối cùng là mỡ hành, nếu thích bạn có thể cho ít tương ớt để món ăn đậm đà hơn.\r\n</p>', 'https://www.youtube.com/embed/BIUDqLW28f8', 'accept');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daphuongtien`
+--
+
+CREATE TABLE `daphuongtien` (
+  `ID_phuongtien` varchar(255) NOT NULL,
+  `Url_hinhanh` varchar(255) DEFAULT NULL,
+  `Url_video` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donggopykien`
+--
+
+CREATE TABLE `donggopykien` (
+  `ID_donggopykien` varchar(255) NOT NULL,
+  `Hovaten` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `Baidangcanykien` int(11) DEFAULT NULL,
+  `Noidungykien` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `monandadang`
+--
+
+CREATE TABLE `monandadang` (
+  `ID_monandadang` varchar(255) NOT NULL,
+  `ID_nguoidung` varchar(255) DEFAULT NULL,
+  `ID_thucphamchinh` varchar(255) DEFAULT NULL,
+  `Tenmonan` varchar(255) DEFAULT NULL,
+  `Motamonan` text DEFAULT NULL,
+  `Thoigianchuanbi` int(11) DEFAULT NULL,
+  `Nguyenlieu` text DEFAULT NULL,
+  `Thoigianlam` int(11) DEFAULT NULL,
+  `Congthuc` text DEFAULT NULL,
+  `Videohuongdan` varchar(1111) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `monanduocyeuthich`
+--
+
+CREATE TABLE `monanduocyeuthich` (
+  `ID_monanduocyeuthich` varchar(255) NOT NULL,
+  `ID_nguoidung` varchar(255) DEFAULT NULL,
+  `ID_thucphamchinh` varchar(255) DEFAULT NULL,
+  `ID_baidang` varchar(255) DEFAULT NULL,
+  `Tenmonan` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nguoidung`
+--
+
+CREATE TABLE `nguoidung` (
+  `ID_nguoidung` varchar(255) NOT NULL,
+  `Tennguoidung` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `Matkhau` varchar(255) DEFAULT NULL,
+  `SDT` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nguoidung`
+--
+
+INSERT INTO `nguoidung` (`ID_nguoidung`, `Tennguoidung`, `Email`, `Matkhau`, `SDT`) VALUES
+('Huỳnh Ngọc Khanh', 'Huỳnh Ngọc Khanh', 'huynhkanh24@gmail.com', 'Hnk090104', '0914783323'),
+('Võ Phạm Thị Thu Hoa', 'Võ Phạm Thị Thu Hoa', 'vohoa@gmail.com', 'hoa12345', '098333333');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thucphamchinh`
+--
+
+CREATE TABLE `thucphamchinh` (
+  `ID_thucphamchinh` varchar(255) NOT NULL,
+  `Tenthucphamchinh` varchar(255) DEFAULT NULL,
+  `anhthucphamchinh` varchar(222) NOT NULL,
+  `cap` varchar(222) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `thucphamchinh`
+--
+
+INSERT INTO `thucphamchinh` (`ID_thucphamchinh`, `Tenthucphamchinh`, `anhthucphamchinh`, `cap`) VALUES
+('cahoi', 'CÁ HỒI', '', '2'),
+('diemtam', 'ĐIỂM TÂM', 'diemtam.jpg', '1'),
+('dochay', 'ĐỒ CHAY', 'monchay.jpg', '1'),
+('haisan', 'HẢI SẢN', 'haisan.jpg', '1'),
+('muc', 'MỰC', '', '2'),
+('thit', 'THỊT', 'thit.jpg', '1'),
+('thitbo', 'THỊT BÒ', '', '2'),
+('thitheo', 'HỊT HEO', '', '2'),
+('tom', 'TÔM', '', '2');
+
 --
 -- Indexes for dumped tables
 --
@@ -86,6 +195,44 @@ ALTER TABLE `baidangmonan`
   ADD KEY `ID_thucphamchinh` (`ID_thucphamchinh`);
 
 --
+-- Indexes for table `daphuongtien`
+--
+ALTER TABLE `daphuongtien`
+  ADD PRIMARY KEY (`ID_phuongtien`);
+
+--
+-- Indexes for table `donggopykien`
+--
+ALTER TABLE `donggopykien`
+  ADD PRIMARY KEY (`ID_donggopykien`);
+
+--
+-- Indexes for table `monandadang`
+--
+ALTER TABLE `monandadang`
+  ADD PRIMARY KEY (`ID_monandadang`),
+  ADD KEY `ID_nguoidung` (`ID_nguoidung`),
+  ADD KEY `ID_thucphamchinh` (`ID_thucphamchinh`);
+
+--
+-- Indexes for table `monanduocyeuthich`
+--
+ALTER TABLE `monanduocyeuthich`
+  ADD PRIMARY KEY (`ID_monanduocyeuthich`);
+
+--
+-- Indexes for table `nguoidung`
+--
+ALTER TABLE `nguoidung`
+  ADD PRIMARY KEY (`ID_nguoidung`);
+
+--
+-- Indexes for table `thucphamchinh`
+--
+ALTER TABLE `thucphamchinh`
+  ADD PRIMARY KEY (`ID_thucphamchinh`);
+
+--
 -- Constraints for dumped tables
 --
 
@@ -95,6 +242,13 @@ ALTER TABLE `baidangmonan`
 ALTER TABLE `baidangmonan`
   ADD CONSTRAINT `baidangmonan_ibfk_1` FOREIGN KEY (`ID_nguoidung`) REFERENCES `nguoidung` (`ID_nguoidung`),
   ADD CONSTRAINT `baidangmonan_ibfk_2` FOREIGN KEY (`ID_thucphamchinh`) REFERENCES `thucphamchinh` (`ID_thucphamchinh`);
+
+--
+-- Constraints for table `monandadang`
+--
+ALTER TABLE `monandadang`
+  ADD CONSTRAINT `monandadang_ibfk_1` FOREIGN KEY (`ID_nguoidung`) REFERENCES `nguoidung` (`ID_nguoidung`),
+  ADD CONSTRAINT `monandadang_ibfk_2` FOREIGN KEY (`ID_thucphamchinh`) REFERENCES `thucphamchinh` (`ID_thucphamchinh`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
