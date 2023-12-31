@@ -17,7 +17,9 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="./Assets/css/responsive.css">
 </head>
-
+<?php 
+ include "./Admin/data/connect.php";
+?>
 <body>
     <!-- begin: main -->
     <div id="main">

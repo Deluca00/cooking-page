@@ -1,10 +1,10 @@
 <?php 
 $conn = new mysqli('localhost','root','','datacookingbooks');
+
 function thucphamchinh($conn){
   $query = "SELECT * FROM `thucphamchinh` WHERE cap= 1 ";
   $result = mysqli_query($conn,$query);
   return $result;
-
 }
 function thucphamchinhhaisan($conn){
   $query = "SELECT * FROM `thucphamchinh` WHERE cap= 2 ";
@@ -49,9 +49,8 @@ $result = mysqli_query($conn,$query);
   return $result;
 
 }
-function monanuuthic($conn){
-
-  $query =" SELECT * FROM baidangmonan WHERE idtl " ;
+ function monanuuthich($conn){
+  $query =" SELECT * FROM baidangmonan WHERE ID_baidang IN (SELECT ID_baidang FROM monanduocyeuthich) ";
   $result = mysqli_query($conn,$query);
     return $result;
   
