@@ -76,6 +76,10 @@
                <label class="label-signup" for="conPwd">Confirm Password: <span class="valid"></span></label>
                <input type="password" class="form-control" id="conPwd" placeholder="Confirm password" name="conPass" autocomplete="on">
            </div>
+           <div class="mb-3 text-start">
+               <label class="label-signup" for="conPwd">Phone Number: <span class="valid"></span></label>
+               <input type="number" class="form-control" id="phone" placeholder="Phone_number" name="phonnum" autocomplete="on">
+           </div>
            <button type="submit" name="submit" class="btn text-white w-100 text-uppercase">sign up</button>
            <p class="mt-4">you have account? <a href="index.php">sign-in</a></p>
        </form>

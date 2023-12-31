@@ -13,8 +13,6 @@ if (isset($_POST['submit'])){
     Name = '$Name',
     Email = '$Email',
     Phone = '$Phone',
-    EnrollNumber = '$EnrollNumber',
-    DateOfAdmission = '$DateOfAdmission'
     WHERE Id = $id");
     $res = $requete -> execute();
     header("location:students_list.php");

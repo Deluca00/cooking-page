@@ -14,7 +14,7 @@
     include 'conixion.php';
     $_SESSION["id"]= $_GET['Id'];
     $id = $_SESSION["id"];
-    $statement = $con -> prepare("SELECT * FROM students_list WHERE Id = $id");
+    $statement = $con -> prepare("SELECT * FROM nguoidung WHERE ID_nguoidung = $id");
     $statement->execute();
     $table = $statement -> fetch();
 
@@ -39,14 +39,7 @@
                                     <label for="recipient-name" class="col-form-label">Phone:</label>
                                     <input type="text" class="form-control" id="recipient-name" name="Phone" value="<?php echo $table['Phone']?>">
                                   </div>
-                                  <div class="">
-                                    <label for="recipient-name" class="col-form-label">Enroll Number:</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="EnrollNumber" value="<?php echo $table['EnrollNumber']?>">
-                                  </div>
-                                  <div class="">
-                                    <label for="recipient-name" class="col-form-label">Date of admission:</label>
-                                    <input type="date" class="form-control" id="recipient-name" name="DateOfAdmission" value="<?php echo $table['DateOfAdmission']?>">
-                                  </div>
+                                 
                                   <div class="modal-footer">
                                 <button type="submit" name="submit" class="btn btn-primary">Update student</button>
                               </div>

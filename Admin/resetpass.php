@@ -5,7 +5,7 @@ if (isset($_POST['submit'])){
     include './pages/conixion.php';
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $requete = "SELECT * FROM users WHERE username = '$username' and Email = '$email'";
+    $requete = "SELECT * FROM nnguoidung WHERE Tennguoidung = '$username' and Email = '$email'";
     $statment = $con -> prepare($requete);
     $statment -> execute();
     $result = $statment -> fetch();

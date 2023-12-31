@@ -17,13 +17,17 @@
         <?php 
             include "component/sidebar.php";
             include 'conixion.php';
-            $nbr_students = $con->query("SELECT * FROM students_list");
-            $nbr_students = $nbr_students->rowCount();
-
-            $nbr_cours = $con->query("SELECT * FROM courses");
-            $nbr_cours = $nbr_cours->rowCount();
-
-
+            $nbr_account = $con->query("SELECT * FROM nguoidung where quyen = 'customer'");
+            $nbr_account = $nbr_account->rowCount();
+            
+            $nbr_baidang = $con->query("SELECT * FROM baidangmonan where Trangthai = 'accept' ");
+            $nbr_baidang = $nbr_baidang->rowCount();
+            
+            $nbr_monanuuthich = $con->query("SELECT * FROM monanduocyeuthich ");
+            $nbr_monanuuthich = $nbr_monanuuthich->rowCount();
+            
+            $nbr_donggopykien = $con->query("SELECT * FROM donggopykien");
+            $nbr_donggopykien = $nbr_donggopykien->rowCount();
         ?>
         <!-- end sidebar -->
 
@@ -36,10 +40,10 @@
                 <div class=" card__items card__items--blue col-md-3 position-relative">
                     <div class="card__students d-flex flex-column gap-2 mt-3">
                         <i class="far fa-graduation-cap h3"></i>
-                        <span>Students</span>
+                        <span>Account/span>
                     </div>
                     <div class="card__nbr-students">
-                        <span class="h5 fw-bold nbr"><?php echo $nbr_students; ?></span>
+                        <span class="h5 fw-bold nbr"><?php echo $nbr_account; ?></span>
                     </div>
                 </div>
 
@@ -49,20 +53,28 @@
                         <span>Course</span>
                     </div>
                     <div class="card__nbr-course">
-                        <span class="h5 fw-bold nbr"><?php echo $nbr_cours; ?></span>
+                        <span class="h5 fw-bold nbr"><?php echo  $nbr_baidang; ?></span>
                     </div>
                 </div>
 
-                <div class=" card__items card__items--yellow col-md-3 position-relative">
-                    <div class="card__payments d-flex flex-column gap-2 mt-3">
-                        <i class="fal fa-usd-square h3"></i>
-                        <span>Payments</span>
+                <div class=" card__items card__items--rose col-md-3 position-relative">
+                    <div class="card__Course d-flex flex-column gap-2 mt-3">
+                        <i class="fal fa-bookmark h3"></i>
+                        <span>Course</span>
                     </div>
-                    <div class="card__payments">
-                        <span class="h5 fw-bold nbr">DHS 556,000</span>
+                    <div class="card__nbr-course">
+                        <span class="h5 fw-bold nbr"><?php echo $nbr_monanuuthich; ?></span>
                     </div>
                 </div>
-
+                <div class=" card__items card__items--rose col-md-3 position-relative">
+                    <div class="card__Course d-flex flex-column gap-2 mt-3">
+                        <i class="fal fa-bookmark h3"></i>
+                        <span>Course</span>
+                    </div>
+                    <div class="card__nbr-course">
+                        <span class="h5 fw-bold nbr"><?php echo  $nbr_donggopykien; ?></span>
+                    </div>
+                </div>
                 <div class="card__items card__items--gradient col-md-3 position-relative">
                     <div class="card__users d-flex flex-column gap-2 mt-3">
                         <i class="fal fa-user h3"></i>
