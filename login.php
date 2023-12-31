@@ -9,7 +9,6 @@
 </head>
 <?php
 if (isset($_POST['signup'])) {
-    require_once('./Admin/data/connect.php');
     $name = $_POST['username'];
     $email = $_POST['email'];
     $phone_number = $_POST['phone_number'];
@@ -28,6 +27,7 @@ if (isset($_POST['signup'])) {
         }
     }
 }
+
 ?>
 
 <body>

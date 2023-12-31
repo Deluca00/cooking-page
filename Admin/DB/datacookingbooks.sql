@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 09:28 PM
+-- Generation Time: Dec 31, 2023 at 11:14 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `datacookingbooks`
-create database datacookingbooks;
+create DATABASE datacookingbooks;
 use datacookingbooks;
 --
 
@@ -130,6 +130,16 @@ CREATE TABLE `monanduocyeuthich` (
   `ID_baidang` varchar(255) DEFAULT NULL,
   `Tenmonan` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `monanduocyeuthich`
+--
+
+INSERT INTO `monanduocyeuthich` (`ID_monanduocyeuthich`, `ID_nguoidung`, `ID_thucphamchinh`, `ID_baidang`, `Tenmonan`) VALUES
+('banhtartsocola', 'Võ Phạm Thị Thu Hoa', 'diemtam', 'banhtartsocola', 'bánh tart socola'),
+('Bohambia', 'Võ Phạm Thị Thu Hoa', 'thitbo', 'Bohambia', 'Bò hầm bia'),
+('HuTiuChay', 'Võ Phạm Thị Thu Hoa', 'dochay', 'HuTiuChay', 'Hủ Tíu Chay'),
+('Saladcahoi', 'Võ Phạm Thị Thu Hoa', 'cahoi', 'Saladcahoi', 'Salad cá hồi');
 
 -- --------------------------------------------------------
 
