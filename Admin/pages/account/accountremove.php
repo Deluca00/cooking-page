@@ -1,11 +1,14 @@
 <?php 
-    include 'conixion.php';
-    $id = $_GET['Id'];
+    include '../conixion.php';
+    $id = $_GET['ID_nguoidung'];
 
     if(isset($id)){
-        $stmt = $con ->prepare("DELETE FROM students_list WHERE Id=$id");
-        $stmt -> execute();
+        $id = $_GET['ID_nguoidung'];
+
+    $stmt = $con->prepare("DELETE FROM nguoidung WHERE ID_nguoidung = :id");
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
 
     }
-    header('location:students_list.php');
+    header('location:account_list.php');
 ?>

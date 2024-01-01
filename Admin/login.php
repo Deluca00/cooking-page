@@ -9,10 +9,10 @@
           $statment = $con -> prepare($requete);
           $statment -> execute();
           $result = $statment -> fetch();
-          if($result['Email'] === $email && $result['Password'] === $password){
-            $_SESSION['name'] = $result['username'];
+          if($result['Email'] === $email && $result['Matkhau'] === $password){
+            $_SESSION['name'] = $result['Tennguoidung'];
             $_SESSION['email'] = $result['Email'];
-            $_SESSION['password'] = $result['Password'];
+            $_SESSION['password'] = $result['Matkhau'];
             if(isset($_POST['check'])){
                 setcookie('email',$_SESSION['email'],time() + 3600);
                 setcookie('password',$_SESSION['password'],time() + 3600);

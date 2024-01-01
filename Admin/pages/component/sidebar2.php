@@ -5,21 +5,21 @@
                 <i class="far fa-times h4 me-3 close align-self-end d-md-none"></i>
             </div>
             <div class="img-admin d-flex flex-column align-items-center text-center gap-2">
-                <img class="rounded-circle" src="../../assets/img/img-admin.jpeg" alt="img-admin" height="120" width="120">
+                <img class="rounded-circle" src="../assets/img/img-admin.jpeg" alt="img-admin" height="120" width="120">
                 <h2 class="h6 fw-bold"><?php echo $_SESSION['name']; ?></h2>
                 <span class="h7 admin-color">admin</span>
             </div>
             <div class=" bg-list d-flex flex-column align-items-center fw-bold gap-2 mt-4 ">
                 <ul class="d-flex flex-column list-unstyled">
-                        <li class="h7"><a class="nav-link text-dark" href="../dashboard.php"><i
+                        <li class="h7"><a class="nav-link text-dark" href="../pages/dashboard.php"><i
                             class="fal fa-home-lg-alt me-2"></i> <span>Home</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="../baidang/baidang_list.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="../pages/baidang/baidang_list.php"><i
                                 class="fal fa-bookmark me-2"></i> <span>Bài Đăng món ăn</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="../account/account_list.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="../pages/account/account_list.php"><i
                                 class="far fa-graduation-cap me-2"></i> <span>Tài khoản người dùng</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="../monuuthich/monanuuthich_list.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="../page/monuuthich/monanuuthich_list.php"><i
                                 class="fal fa-usd-square me-2"></i> <span>Món ăn được yêu thích</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="../ykienkhachhang/ykien_list.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="../page/ykienkhachhang/ykien_list.php"><i
                                 class="fal fa-file-chart-line me-2"></i> <span>Ý kiến khách hàng</span></a></li>
                     
                 </ul>

@@ -8,7 +8,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
-                                <form method="POST" action="/Admin/pages/account/accountadd.php" enctype="multipart/form-data">
+                                <form method="POST" action="accountadd.php" enctype="multipart/form-data">
                                   <div class="">
                                     <label for="recipient-name" class="col-form-label">img:</label>
                                     <input type="file" class="form-control" id="recipient-name" accept=".jpg,.png,.jpeg" name="img">

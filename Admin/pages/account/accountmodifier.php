@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
   <?php
     session_start();
-    include 'conixion.php';
-    $_SESSION["id"]= $_GET['Id'];
-    $id = $_SESSION["id"];
-    $statement = $con -> prepare("SELECT * FROM nguoidung WHERE ID_nguoidung = $id");
+    include '../conixion.php';
+    $_SESSION["ID_nguoidung"]= $_GET['ID_nguoidung'];
+    $id = $_SESSION["ID_nguoidung"];
+    $statement = $con -> prepare("SELECT * FROM nguoidung WHERE ID_nguoidung = :id");
+    $statement->bindParam(':id', $id, PDO::PARAM_STR);
     $statement->execute();
     $table = $statement -> fetch();
 
@@ -22,14 +23,14 @@
 <div class="container w-50">
 
 
-<form method="POST" action="update.php" enctype="multipart/form-data">
+<form method="POST" action="accountupdate.php" enctype="multipart/form-data">
                                   <div class="">
                                     <label for="recipient-name" class="col-form-label">img:</label>
                                     <input type="file" class="form-control" id="recipient-name" accept=".jpg,.png,.jpeg" name="img">
                                   </div>
                                   <div class="">
                                     <label for="recipient-name" class="col-form-label">Name:</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="Name" value="<?php echo $table['Name']?>">
+                                    <input type="text" class="form-control" id="recipient-name" name="Name" value="<?php echo $table['Tennguoidung']?>">
                                   </div>
                                   <div class="">
                                     <label for="recipient-name" class="col-form-label">Email:</label>
@@ -37,15 +38,15 @@
                                   </div>
                                   <div class="">
                                     <label for="recipient-name" class="col-form-label">Phone:</label>
-                                    <input type="text" class="form-control" id="recipient-name" name="Phone" value="<?php echo $table['Phone']?>">
+                                    <input type="text" class="form-control" id="recipient-name" name="Phone" value="<?php echo $table['SDT']?>">
                                   </div>
                                  
                                   <div class="modal-footer">
-                                <button type="submit" name="submit" class="btn btn-primary">Update student</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Update Account</button>
                               </div>
                                 </form>
 </div>
-    <script src="../js/script.js"></script>
-    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
 </body>
 </html>
