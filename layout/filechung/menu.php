@@ -11,9 +11,9 @@ session_start();
                 <li><a href="./index.php">TRANG CHỦ</a></li>
                 <li><a href="./food.php">MÓN ĂN</a></li>
                 <li><a href="./contactindex.php">TƯƠNG TÁC</a></li>
-                <li>
+                <li> <a href="./layout/filechung/index_login.php"><i class="fa-solid fa-user">
                     <?php if (isset($_SESSION['Ten'])) : ?>
-                        <a href="./layout/filechung/index_login.php"><i class="fa-solid fa-user"><?php echo $_SESSION['Ten']; ?></i></a>
+                       <?php echo $_SESSION['Ten']; ?></i></a>
                         <ul class="submenu">
                             <!-- Add submenu items here if needed -->
                         </ul>
