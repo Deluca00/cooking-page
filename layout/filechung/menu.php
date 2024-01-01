@@ -11,13 +11,14 @@ session_start();
                 <li><a href="./index.php">TRANG CHỦ</a></li>
                 <li><a href="./food.php">MÓN ĂN</a></li>
                 <li><a href="./contactindex.php">TƯƠNG TÁC</a></li>
-                <li>
+                <li style="color:white;">
                     <a href="./layout/filechung/index_login.php">
-                        <i class="fa-solid fa-user"></i>
+                        <i class="fa-solid fa-user" ></i>
                     </a>
                     <?php if (isset($_SESSION['Ten'])) : ?><?php echo $_SESSION['Ten']; ?>
-                    <ul class="submenu">
-                        <li><a href="./layout/filechung/logout.php">Logout</a></li>
+                    <ul  id="sub">
+                        <li><a  href="">Thông tin</a></li>
+                        <li><a href="./layout/filechung/logout.php">Đăng xuất</a></li>
                     </ul>
                     <?php endif; ?>
                 </li>
