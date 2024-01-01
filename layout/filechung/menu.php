@@ -11,13 +11,14 @@ session_start();
                 <li><a href="./index.php">TRANG CHỦ</a></li>
                 <li><a href="./food.php">MÓN ĂN</a></li>
                 <li><a href="./contactindex.php">TƯƠNG TÁC</a></li>
-                <li> <a href="./layout/filechung/index_login.php"><i class="fa-solid fa-user"></i>
-                    <?php if (isset($_SESSION['Ten'])) : ?>
-                       <?php echo $_SESSION['Ten']; ?></i></a>
-                        <ul class="submenu">
-                           <li><a href="./layout/filechung/logout.php">Logout</a></li>
-                        </ul>
-                    <?php else : ?>
+                <li>
+                    <a href="./layout/filechung/index_login.php">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <?php if (isset($_SESSION['Ten'])) : ?><?php echo $_SESSION['Ten']; ?>
+                    <ul class="submenu">
+                        <li><a href="./layout/filechung/logout.php">Logout</a></li>
+                    </ul>
                     <?php endif; ?>
                 </li>
             </ul>

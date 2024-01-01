@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="./Assets/css/responsive.css">
 
 </head>
-
+<?php include "./Admin/data/connect.php"   ?>
 <body>
   <div id="wrapper">
     <?php
