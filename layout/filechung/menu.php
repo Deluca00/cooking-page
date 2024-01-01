@@ -15,10 +15,9 @@ session_start();
                     <?php if (isset($_SESSION['Ten'])) : ?>
                        <?php echo $_SESSION['Ten']; ?></i></a>
                         <ul class="submenu">
-                            <!-- Add submenu items here if needed -->
+                           <li><a href="./layout/filechung/logout.php">Logout</a></li>
                         </ul>
                     <?php else : ?>
-                        <a href="./layout/filechung/index_login.php"><i class="fa-solid fa-user"></i></a>
                     <?php endif; ?>
                 </li>
             </ul>
