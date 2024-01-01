@@ -29,7 +29,7 @@
         
             <!-- start student list table -->
             <div class="student-list-header d-flex justify-content-between align-items-center py-2">
-                <div class="title h6 fw-bold">Account</div>
+                <div class="title h6 fw-bold">Bài đăng món ăn</div>
                 <div class="btn-add d-flex gap-3 align-items-center">
                     <div class="short">
                         <i class="far fa-sort"></i>
