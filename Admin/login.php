@@ -5,7 +5,7 @@
           $email = $_POST['email'];
           $password = $_POST['pass'];
 
-          $requete = "SELECT * FROM nguoidung WHERE Email = '$email' and Matkhau = '$password'";
+          $requete = "SELECT * FROM nguoidung WHERE Email = '$email' and Matkhau = '$password' and quyen = 'admin'";
           $statment = $con -> prepare($requete);
           $statment -> execute();
           $result = $statment -> fetch();

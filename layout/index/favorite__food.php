@@ -5,7 +5,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
                     <div class="row">
                                  <?php       
-                                    $monanuuthich = monanuuthich($conn);
+                                      $monanuuthich = monanuuthich($conn);
                                       while($row_monanuuthich=mysqli_fetch_array($monanuuthich)){
                                  ?>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 item-ff">

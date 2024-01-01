@@ -17,9 +17,9 @@
                                 class="fal fa-bookmark me-2"></i> <span>Bài Đăng món ăn</span></a></li>
                     <li class="h7"><a class=" nav-link text-dark" href="../pages/account/account_list.php"><i
                                 class="far fa-graduation-cap me-2"></i> <span>Tài khoản người dùng</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="../page/monuuthich/monanuuthich_list.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="../pages/monuuthich/monanuuthich_list.php"><i
                                 class="fal fa-usd-square me-2"></i> <span>Món ăn được yêu thích</span></a></li>
-                    <li class="h7"><a class=" nav-link text-dark" href="../page/ykienkhachhang/ykien_list.php"><i
+                    <li class="h7"><a class=" nav-link text-dark" href="../pages/ykienkhachhang/ykien_list.php"><i
                                 class="fal fa-file-chart-line me-2"></i> <span>Ý kiến khách hàng</span></a></li>
                     
                 </ul>

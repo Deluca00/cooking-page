@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sing-in</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../../Admin/css/bootstrap.css">
+    <link rel="stylesheet" href="../../Admin/css/style.css">
 </head>
 <body>
    <main class="bg-sign-in d-flex justify-content-center align-items-center">
       <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
-        <h1 class="E-classe text-start ms-3 ps-1" >E-classe</h1>
+        <h1 class="E-classe text-start ms-3 ps-1" >Cookings Book</h1>
         <div>
           <h2 class=" sign-in text-uppercase">sign in</h2>
         <p>Enter your credentials to access your account</p>
@@ -85,7 +85,7 @@
        </form>
    </div>
    </div>
-   <script src="/js/bootstrap.bundle.js"></script>
-   <script src="./js/validation.js"></script>
+   <script src="../../Admin/js/bootstrap.bundle.js"></script>
+   <script src="../../Admin/js/validation.js"></script>
 </body>
 </html>

@@ -1,11 +1,13 @@
-<?php 
-    include 'conixion.php';
-    $id = $_GET['Id'];
+<?php
+include '../conixion.php';
 
-    if(isset($id)){
-        $stmt = $con ->prepare("DELETE FROM students_list WHERE Id=$id");
-        $stmt -> execute();
+$id_monanduocyeuthich = $_GET['ID_monanduocyeuthich'];
 
-    }
-    header('location:students_list.php');
+$stmt_delete_favorite = $con->prepare("DELETE FROM monanduocyeuthich WHERE ID_monanduocyeuthich = :id_monanduocyeuthich");
+$stmt_delete_favorite->bindParam(':id_monanduocyeuthich', $id_monanduocyeuthich, PDO::PARAM_STR);
+$stmt_delete_favorite->execute();
+
+
+
+header('location:monanuuthich_list.php');
 ?>

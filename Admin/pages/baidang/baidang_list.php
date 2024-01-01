@@ -41,30 +41,28 @@
                 <table class="table student_list table-borderless">
                     <thead>
                         <tr class="align-middle">
-                            <th class="opacity-0">vide</th>
-                            <th></th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Phone</th>
-                            <th>Phone</th>
-                            <th>Phone</th>
-                            <th>Phone</th>
+    
+                            <th>Tên món</th>
+                            <th>Ảnh món</th>
+                            <th>Người đăng</th>
+                            <th>Trạng thái</th>
                             <th class="opacity-0">list</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                           include '../conixion.php';
-                          $result = $con -> query("SELECT * FROM nguoidung ");
+                          $result = $con -> query("SELECT * FROM baidangmonan ");
                           foreach($result as $value):
                         ?>
                       <tr class="bg-white align-middle">
-                      <td><img src="../../assets/img/<?php echo $value['anhdaidien']; ?>" alt="img" height="50" width="50"></td>
-                                <td><?php echo $value['Tennguoidung'] ?></td>
-                                <td><?php echo $value['Email'] ?></td>
-                                <td><?php echo $value['SDT'] ?></td>
+                                <td><?php echo $value['Tenmonan'] ?></td>
+                                <td><img src="../../../Assets/images 2/echo $value['anhmon']; ?>" alt="img" height="50" width="50"></td>
+                                <td><?php echo $value['ID_nguoidung'] ?></td>
+                                <td><?php echo $value['Trangthai'] ?></td>
                                 <td class="d-md-flex gap-3 mt-3">
-                                  <a href="accountmodifier.php?ID_nguoidung=<?php echo $value['ID_nguoidung']?>"><i class="far fa-pen"></i></a>
+                                  <a href="baidangmodifier.php?ID_baidang=<?php echo $value['ID_baidang']?>"><i class="far fa-pen"></i></a>
+                                  <a href="baidangremove.php?ID_baidang=<?php echo $value['ID_baidang']?>"><i class="far fa-trash"></i></i></a>
                                 </td>
                         </tr> 
 

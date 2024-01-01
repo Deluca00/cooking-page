@@ -17,8 +17,8 @@
 
     include '../conixion.php';
     
-    $requete = $con->prepare("INSERT INTO `nguoidung` (`Tennguoidung`, `anhdaidien`, `Email`, `Matkhau`, `SDT`, `quyen`) 
-                             VALUES (:Name, :image, :Email, NULL, :Phone, 'account')");
+    $requete = $con->prepare("INSERT INTO `nguoidung` (`ID_nguoidung`,`Tennguoidung`, `anhdaidien`, `Email`, `Matkhau`, `SDT`, `quyen`) 
+                             VALUES (:Name,:Name, :image, :Email, NULL, :Phone, 'customer') ");
 
     $requete->bindParam(':Name', $Name, PDO::PARAM_STR);
     $requete->bindParam(':image', $image, PDO::PARAM_STR);

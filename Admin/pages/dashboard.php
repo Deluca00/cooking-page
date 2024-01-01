@@ -37,15 +37,7 @@
             include "component/header.php";
         ?>
             <div class="cards row gap-3 justify-content-center mt-5">
-                <div class=" card__items card__items--blue col-md-3 position-relative">
-                    <div class="card__students d-flex flex-column gap-2 mt-3">
-                        <i class="far fa-graduation-cap h3"></i>
-                        <span>Account/span>
-                    </div>
-                    <div class="card__nbr-students">
-                        <span class="h5 fw-bold nbr"><?php echo $nbr_account; ?></span>
-                    </div>
-                </div>
+                
 
                 <div class=" card__items card__items--rose col-md-3 position-relative">
                     <div class="card__Course d-flex flex-column gap-2 mt-3">

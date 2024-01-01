@@ -92,9 +92,10 @@ CREATE TABLE `daphuongtien` (
 
 CREATE TABLE `donggopykien` (
   `ID_donggopykien` varchar(255) NOT NULL,
+  `Tenmonan` varchar(222) NOT NULL,
   `Hovaten` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
-  `Baidangcanykien` int(11) DEFAULT NULL,
+  `Baidangcanykien` varchar(222) DEFAULT NULL,
   `Noidungykien` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -136,7 +137,7 @@ CREATE TABLE `monanduocyeuthich` (
 --
 
 INSERT INTO `monanduocyeuthich` (`ID_monanduocyeuthich`, `ID_nguoidung`, `ID_thucphamchinh`, `ID_baidang`, `Tenmonan`) VALUES
-('banhtartsocola', 'Võ Phạm Thị Thu Hoa', 'diemtam', 'banhtartsocola', 'bánh tart socola'),
+('banhtartsocola', 'Huỳnh Ngọc Khanh', 'diemtam', 'banhtartsocola', 'bánh tart socola'),
 ('Bohambia', 'Võ Phạm Thị Thu Hoa', 'thitbo', 'Bohambia', 'Bò hầm bia'),
 ('HuTiuChay', 'Võ Phạm Thị Thu Hoa', 'dochay', 'HuTiuChay', 'Hủ Tíu Chay'),
 ('Saladcahoi', 'Võ Phạm Thị Thu Hoa', 'cahoi', 'Saladcahoi', 'Salad cá hồi');
@@ -150,18 +151,24 @@ INSERT INTO `monanduocyeuthich` (`ID_monanduocyeuthich`, `ID_nguoidung`, `ID_thu
 CREATE TABLE `nguoidung` (
   `ID_nguoidung` varchar(255) NOT NULL,
   `Tennguoidung` varchar(255) DEFAULT NULL,
+  `anhdaidien` varchar(222) NOT NULL,
   `Email` varchar(255) DEFAULT NULL,
   `Matkhau` varchar(255) DEFAULT NULL,
-  `SDT` varchar(15) DEFAULT NULL
+  `SDT` varchar(15) DEFAULT NULL,
+  `quyen` enum('admin','customer') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`ID_nguoidung`, `Tennguoidung`, `Email`, `Matkhau`, `SDT`) VALUES
-('Huỳnh Ngọc Khanh', 'Huỳnh Ngọc Khanh', 'huynhkanh24@gmail.com', 'Hnk090104', '0914783323'),
-('Võ Phạm Thị Thu Hoa', 'Võ Phạm Thị Thu Hoa', 'vohoa@gmail.com', 'hoa12345', '098333333');
+INSERT INTO `nguoidung` (`ID_nguoidung`, `Tennguoidung`, `anhdaidien`, `Email`, `Matkhau`, `SDT`, `quyen`) VALUES
+('', 'd', '22it138_Huỳnh Ngọc Khanh .jpg', 'huynhkanh24@gmail.com', NULL, '2131231231', ''),
+('Bảo Hân', 'Bảo Hân', 'pngtree-glossy-yellow-number-2024-text-design-on-shape-pink-background-vector-png-image_10514396.png', 'huynhkanh26@gmail.com', NULL, '2131231231', ''),
+('Huỳnh Ngọc Khanh', 'Huỳnh Ngọc Khanh', '22it138_Huỳnh Ngọc Khanh .jpg', 'huynhkanh24@gmail.com', 'Hnk090104', '0914783323', 'admin'),
+('huynhkanh', 'khanh', '', 'huynhkanh24@gmail.com', 'Hnk090104', '0914783323', 'admin'),
+('khanhhhhhh', 'khanhhhhhh', '411582446_1340457869930072_4902494404600293926_n.jpg', 'huynhkanh24@gmail.com', NULL, '2323242424', ''),
+('Võ Phạm Thị Thu Hoa', 'Võ Phạm Thị Thu Hoa', '', 'vohoa@gmail.com', 'hoa12345', '098333333', 'admin');
 
 -- --------------------------------------------------------
 
