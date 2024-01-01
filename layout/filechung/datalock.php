@@ -1,7 +1,9 @@
 <?php 
-
-
-$conn = new mysqli('localhost','root','','datacookingbooks');
-
-
+    try {
+        $conn = new PDO("mysql:host=localhost;dbname=datacookingbooks", "root", "");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+       catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+      }
 ?>

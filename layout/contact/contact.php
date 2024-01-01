@@ -5,7 +5,7 @@
 
         <!-- Left contact page -->
 
-        <form id="contact-form" class="form-horizontal" role="form">
+        <form id="contact-form" method="post" action="upcontact.php" hre class="form-horizontal" role="form">
 
           <div class="form-group">
             <div class="col-sm-12">

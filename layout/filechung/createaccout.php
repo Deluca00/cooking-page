@@ -8,13 +8,13 @@
         $phone = $_POST['phonnum'];
         if($pass === $conPass){
             var_dump($userName);
-            $requete = $con->prepare("INSERT INTO nguoidung(ID_nguoidung,Tennguoidung,Email,Matkhau,SDT,quyen)
-             VALUES('$userName','$userName','$email','$pass','$phone','account')");
+            $requete = $conn->prepare("INSERT INTO nguoidung(ID_nguoidung,Tennguoidung,Email,Matkhau,SDT,quyen)
+             VALUES('$userName','$userName','$email','$pass','$phone','customer')");
             $requete->execute();
-            header('location:index.php');
+            header('location:index_login.php');
         }
         else{
-            header("location:index.php?error=password not found");
+            header("location:index_login.php?error=password not found");
         }
     }
 ?>
