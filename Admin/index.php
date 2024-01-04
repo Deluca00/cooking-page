@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
    <main class="bg-sign-in d-flex justify-content-center align-items-center">
-      <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column" >
-        <h1 class=" text-start ms-3 ps-1" ><br>Bookings Book</h1>
+      <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
+        <h1 class="E-classe text-start ms-3 ps-1" >Cookings Book</h1>
         <div>
           <h2 class=" sign-in text-uppercase">Admin</h2>
         </div>

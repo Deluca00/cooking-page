@@ -10,11 +10,10 @@
 </head>
 <body>
    <main class="bg-sign-in d-flex justify-content-center align-items-center">
-      <div class="form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
+      <div class=" form-sign-in bg-white mt-2 h-auto mb-2 text-center pt-2 pe-4 ps-4 d-flex flex-column">
         <h1 class="E-classe text-start ms-3 ps-1" >Cookings Book</h1>
         <div>
-          <h2 class=" sign-in text-uppercase">Sign in</h2>
-       
+          <h2 class=" sign-in text-uppercase">sign in</h2>
         </div>
         <?php
           if(isset($_GET['error'])){
