@@ -1,11 +1,11 @@
 <?php
-include '../conixion.php';
+include 'datalock.php';
 
 if (isset($_POST['submit'])) {
     // Handle the main dish image upload
     $image = $_FILES['img']['name'];
     $tempname = $_FILES['img']['tmp_name'];
-    $folder = "../../../Assets/images 2/$image";
+    $folder = "../../Assets/images 2/$image";
 
     if (move_uploaded_file($tempname, $folder)) {
         // Main dish image uploaded successfully
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     for ($i = 1; $i <= 6; $i++) {
         $ingredientImage = $_FILES['img_nguyenlieu' . $i]['name'];
         $ingredientTempname = $_FILES['img_nguyenlieu' . $i]['tmp_name'];
-        $ingredientFolder = "../../../Assets/images 2/$ingredientImage";
+        $ingredientFolder = "../../Assets/images 2/$ingredientImage";
 
         if (move_uploaded_file($ingredientTempname, $ingredientFolder)) {
             // Ingredient image uploaded successfully
@@ -42,8 +42,8 @@ if (isset($_POST['submit'])) {
     $Video = $_POST['Video'];
 
     // Prepare and execute the SQL query
-    $requete = $con->prepare("INSERT INTO `baidangmonan` 
-    ('ID_baidang'`ID_nguoidung`, `ID_thucphamchinh`, `Tenmonan`, `anhmon`, 
+    $requete = $conn->prepare("INSERT INTO `baidangmonan` 
+    (`ID_baidang`,`ID_nguoidung`, `ID_thucphamchinh`, `Tenmonan`, `anhmon`, 
      `nguyenlieu1`, `nguyenlieu2`, `nguyenlieu3`, `nguyenlieu4`, 
      `nguyenlieu5`, `nguyenlieu6`, `Motamonan`, `Thoigianchuanbi`, 
      `Nguyenlieu`, `Thoigianlam`, `Congthuc`, `Video`, `Trangthai`) 
@@ -72,9 +72,10 @@ if (isset($_POST['submit'])) {
     $res = $requete->execute();
 
     if ($res) {
-        header('location:baidang_list.php');
+        echo '<script>alert("Gửi bài thành công"); window.location.href = "../../index.php";</script>';
     } else {
-        echo 'Failed to insert data into the database';
+        echo '<script>alert("Gửi bài thất bại"); window.location.href = "../../index.php";</script>';
     }
+    
 }
 ?>
