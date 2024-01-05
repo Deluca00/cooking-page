@@ -57,7 +57,7 @@
                         ?>
                       <tr class="bg-white align-middle">
                                 <td><?php echo $value['Tenmonan'] ?></td>
-                                <td><img src="../../../Assets/images 2/echo $value['anhmon']; ?>" alt="img" height="50" width="50"></td>
+                                <td><img src="../../../Assets/images 2/<?php echo $value['anhmon']; ?>" alt="img" height="50" width="50"></td>
                                 <td><?php echo $value['ID_nguoidung'] ?></td>
                                 <td><?php echo $value['Trangthai'] ?></td>
                                 <td class="d-md-flex gap-3 mt-3">

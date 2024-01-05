@@ -18,37 +18,19 @@
               <input type="text" class="form-control" id="Tenmonan" name="Tenmonan" required>
             </div>
             <div class="mb-3">
-        <label for="ID_nguoidung" class="form-label">ID người dùng:</label>
-        <input type="text" class="form-control" id="ID_nguoidung" name="ID_nguoidung" required>
-      </div>
+              <label for="ID_nguoidung" class="form-label">ID người dùng:</label>
+              <input type="text" class="form-control" id="ID_nguoidung" name="ID_nguoidung" required>
+            </div>
             <div class="mb-3">
               <label for="ID_thucphamchinh" class="form-label">Thực phẩm chính:</label>
               <input type="text" class="form-control" id="ID_thucphamchinh" name="ID_thucphamchinh">
             </div>
-            <div class="mb-3">
-              <label for="nguyenlieu1" class="form-label">Nguyên liệu 1:</label>
-              <input type="text" class="form-control" id="nguyenlieu1" name="nguyenlieu1">
-            </div>
-            <div class="mb-3">
-              <label for="nguyenlieu2" class="form-label">Nguyên liệu 2:</label>
-              <input type="text" class="form-control" id="nguyenlieu2" name="nguyenlieu2">
-            </div>
-            <div class="mb-3">
-              <label for="nguyenlieu3" class="form-label">Nguyên liệu 3:</label>
-              <input type="text" class="form-control" id="nguyenlieu3" name="nguyenlieu3">
-            </div>
-            <div class="mb-3">
-              <label for="nguyenlieu4" class="form-label">Nguyên liệu 4:</label>
-              <input type="text" class="form-control" id="nguyenlieu4" name="nguyenlieu4">
-            </div>
-            <div class="mb-3">
-              <label for="nguyenlieu5" class="form-label">Nguyên liệu 5:</label>
-              <input type="text" class="form-control" id="nguyenlieu5" name="nguyenlieu5">
-            </div>
-            <div class="mb-3">
-              <label for="nguyenlieu6" class="form-label">Nguyên liệu 6:</label>
-              <input type="text" class="form-control" id="nguyenlieu6" name="nguyenlieu6">
-            </div>
+            <?php for ($i = 1; $i <= 6; $i++) : ?>
+              <div class="mb-3">
+                <label for="img_nguyenlieu<?= $i ?>" class="form-label">Ảnh Nguyên liệu <?= $i ?>:</label>
+                <input type="file" class="form-control" id="img_nguyenlieu<?= $i ?>" accept=".jpg, .png, .jpeg .webp" name="img_nguyenlieu<?= $i ?>" value="<?php echo $table['nguyenlieu' . $i] ?>">
+              </div>
+            <?php endfor; ?>
             <div class="mb-3">
               <label for="Motamonan" class="form-label">Mô tả món ăn:</label>
               <textarea class="form-control" id="Motamonan" name="Motamonan" rows="3"></textarea>

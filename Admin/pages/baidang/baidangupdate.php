@@ -9,16 +9,25 @@ if (isset($_POST['submit'])) {
     $folder = "../../../Assets/images 2/$image";
         
     if (move_uploaded_file($tempname, $folder)) {
-        echo 'Images uploaded successfully';
+        echo 'Main image uploaded successfully';
+        
+        $ingredientImages = array();
+        for ($i = 1; $i <= 6; $i++) {
+            $ingredientImage = $_FILES['img_nguyenlieu' . $i]['name'];
+            $ingredientTempname = $_FILES['img_nguyenlieu' . $i]['tmp_name'];
+            $ingredientFolder = "../../../Assets/images 2/$ingredientImage";
+            
+            if (move_uploaded_file($ingredientTempname, $ingredientFolder)) {
+                echo 'Ingredient image ' . $i . ' uploaded successfully';
+                $ingredientImages["nguyenlieu" . $i] = $ingredientImage;
+            } else {
+                echo 'Failed to upload ingredient image ' . $i;
+                exit; // Stop execution if ingredient image upload fails
+            }
+        }
         
         $Tenmonan = $_POST['Tenmonan'];
         $ID_thucphamchinh = $_POST['ID_thucphamchinh'];
-        $nguyenlieu1 = $_POST['nguyenlieu1'];
-        $nguyenlieu2 = $_POST['nguyenlieu2'];
-        $nguyenlieu3 = $_POST['nguyenlieu3'];
-        $nguyenlieu4 = $_POST['nguyenlieu4'];
-        $nguyenlieu5 = $_POST['nguyenlieu5'];
-        $nguyenlieu6 = $_POST['nguyenlieu6'];
         $Motamonan = $_POST['Motamonan'];
         $Thoigianchuanbi = $_POST['Thoigianchuanbi'];
         $Nguyenlieu = $_POST['Nguyenlieu'];
@@ -51,12 +60,12 @@ if (isset($_POST['submit'])) {
     
             $requete->bindParam(':Tenmonan', $Tenmonan, PDO::PARAM_STR);
             $requete->bindParam(':ID_thucphamchinh', $ID_thucphamchinh, PDO::PARAM_STR);
-            $requete->bindParam(':nguyenlieu1', $nguyenlieu1, PDO::PARAM_STR);
-            $requete->bindParam(':nguyenlieu2', $nguyenlieu2, PDO::PARAM_STR);
-            $requete->bindParam(':nguyenlieu3', $nguyenlieu3, PDO::PARAM_STR);
-            $requete->bindParam(':nguyenlieu4', $nguyenlieu4, PDO::PARAM_STR);
-            $requete->bindParam(':nguyenlieu5', $nguyenlieu5, PDO::PARAM_STR);
-            $requete->bindParam(':nguyenlieu6', $nguyenlieu6, PDO::PARAM_STR);
+            
+            // Bind ingredient images to the parameters
+            foreach ($ingredientImages as $key => $ingredientImage) {
+                $requete->bindParam(':' . $key, $ingredientImage, PDO::PARAM_STR);
+            }
+            
             $requete->bindParam(':Motamonan', $Motamonan, PDO::PARAM_STR);
             $requete->bindParam(':Thoigianchuanbi', $Thoigianchuanbi, PDO::PARAM_STR);
             $requete->bindParam(':Nguyenlieu', $Nguyenlieu, PDO::PARAM_STR);
@@ -68,12 +77,16 @@ if (isset($_POST['submit'])) {
     
             $res = $requete->execute();
             
-            header("location:baidang_list.php");
+            if ($res) {
+                header("location:baidang_list.php");
+            } else {
+                echo 'Failed to update data in the database';
+            }
         } else {
             echo 'Session ID_baidang is not set.';
         }
     } else {
-        echo 'Failed to upload images';
+        echo 'Failed to upload main image';
     }
 }
 ?>

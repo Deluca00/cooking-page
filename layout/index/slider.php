@@ -1,3 +1,4 @@
+
 <div id="slider">
             <div class="black-layer js-search-close">
                 <swiper-container class="mySwiper" pagination="true" pagination-dynamic-bullets="true">
@@ -56,7 +57,7 @@
             </div>
             <div class="mb-3">
         <label for="ID_nguoidung" class="form-label">ID người dùng:</label>
-        <input type="text" class="form-control" id="ID_nguoidung" name="ID_nguoidung" required>
+        <input type="text" class="form-control" id="ID_nguoidung" name="ID_nguoidung" value="  <?php if (isset($_SESSION['Ten'])) : ?><?php echo $_SESSION['Ten']; ?><?php endif; ?>">
       </div>
             <div class="mb-3">
               <label for="ID_thucphamchinh" class="form-label">Thực phẩm chính:</label>

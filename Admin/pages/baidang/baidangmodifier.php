@@ -26,7 +26,7 @@
     <form method="POST" action="baidangupdate.php" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="img" class="form-label">Ảnh món ăn:</label>
-        <input type="file" class="form-control" id="img" accept=".jpg, .png, .jpeg .webp" name="img">
+        <input type="file" class="form-control" id="img" accept=".jpg, .png, .jpeg .webp" name="img" value="<?php echo $table['anhmon'] ?>">
       </div>
       <div class="mb-3">
         <label for="Tenmonan" class="form-label">Tên món ăn:</label>
@@ -41,36 +41,12 @@
         <input type="text" class="form-control" id="ID_thucphamchinh" name="ID_thucphamchinh" value="<?php echo $table['ID_thucphamchinh'] ?>">
       </div>
 
-      <div class="mb-3">
-        <label for="nguyenlieu1" class="form-label">Nguyên liệu 1:</label>
-        <input type="text" class="form-control" id="nguyenlieu1" name="nguyenlieu1" value="<?php echo $table['nguyenlieu1'] ?>">
+      <?php for ($i = 1; $i <= 6; $i++) : ?>
+        <div class="mb-3">
+          <label for="img_nguyenlieu<?= $i ?>" class="form-label">Ảnh Nguyên liệu <?= $i ?>:</label>
+          <input type="file" class="form-control" id="img_nguyenlieu<?= $i ?>" accept=".jpg, .png, .jpeg .webp" name="img_nguyenlieu<?= $i ?>" value="<?php echo $table['nguyenlieu'.$i] ?>">
       </div>
-
-      <div class="mb-3">
-        <label for="nguyenlieu2" class="form-label">Nguyên liệu 2:</label>
-        <input type="text" class="form-control" id="nguyenlieu2" name="nguyenlieu2" value="<?php echo $table['nguyenlieu2'] ?>">
-      </div>
-
-      <div class="mb-3">
-        <label for="nguyenlieu3" class="form-label">Nguyên liệu 3:</label>
-        <input type="text" class="form-control" id="nguyenlieu3" name="nguyenlieu3" value="<?php echo $table['nguyenlieu3'] ?>">
-      </div>
-
-      <div class="mb-3">
-        <label for="nguyenlieu4" class="form-label">Nguyên liệu 4:</label>
-        <input type="text" class="form-control" id="nguyenlieu4" name="nguyenlieu4" value="<?php echo $table['nguyenlieu4'] ?>">
-      </div>
-
-      <div class="mb-3">
-        <label for="nguyenlieu5" class="form-label">Nguyên liệu 5:</label>
-        <input type="text" class="form-control" id="nguyenlieu5" name="nguyenlieu5" value="<?php echo $table['nguyenlieu5'] ?>">
-      </div>
-
-      <div class="mb-3">
-        <label for="nguyenlieu6" class="form-label">Nguyên liệu 6:</label>
-        <input type="text" class="form-control" id="nguyenlieu6" name="nguyenlieu6" value="<?php echo $table['nguyenlieu6'] ?>">
-      </div>
-
+      <?php endfor; ?>
       <div class="mb-3">
         <label for="Motamonan" class="form-label">Mô tả món ăn:</label>
         <textarea class="form-control" id="Motamonan" name="Motamonan" rows="3"><?php echo $table['Motamonan'] ?></textarea>
