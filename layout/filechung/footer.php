@@ -15,7 +15,9 @@
                     <h4>TEAM</h4>
                     <ul>
                         <li><a href="">Huỳnh Ngọc Khanh</a></li>
-                        <li><a href="">Võ Phạm Thị Thu Hoa</a></li>
+                        <li><a href="">Trần Nguyễn Quốc Chấn</a></li>
+                        <li><a href="">Ngô Hoàng Anh</a></li>
+                     
                        
 
                     </ul>

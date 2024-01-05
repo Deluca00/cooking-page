@@ -1,3 +1,20 @@
+<?php
+
+if(isset($_POST['btn'])){  
+      $Tenmonan = $_POST['Tenmonan'];
+      $Hovaten = $_POST['name'];
+      $Email = $_POST['email'];
+      $Baidangcanykien = $_POST['url'];
+      $Noidungykien = $_POST['message'];  
+      $requete = $con->prepare("INSERT INTO donggopykien (Tenmonan, Hovaten, Email, Baidangcanykien, Noidungykien) 
+                               VALUES (:Tenmonan, :Hovaten, :Email, :Baidangcanykien, :Noidungykien)");
+      $requete->bindParam(':Tenmonan', $Tenmonan, PDO::PARAM_STR);
+      $requete->bindParam(':Hovaten', $Hovaten, PDO::PARAM_STR);
+      $requete->bindParam(':Email', $Email, PDO::PARAM_STR);
+      $requete->bindParam(':Baidangcanykien', $Baidangcanykien, PDO::PARAM_STR);
+      $requete->bindParam(':Noidungykien', $Noidungykien, PDO::PARAM_STR);
+}
+?>
 <section id="contact">
       <h1 class="section-header">Liên hệ với chúng tôi</h1>
 
@@ -5,14 +22,18 @@
 
         <!-- Left contact page -->
 
-        <form id="contact-form" method="post" action="upcontact.php" hre class="form-horizontal" role="form">
+        <form id="contact-form" method="post" >
 
           <div class="form-group">
             <div class="col-sm-12">
               <input type="text" class="form-control" id="name" placeholder="HỌ TÊN" name="name" value="" required>
             </div>
           </div>
-
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input type="text" class="form-control" id="Tenmonan" placeholder="Tên món ăn" name="Tenmonan" value="" required>
+            </div>
+          </div>
           <div class="form-group">
             <div class="col-sm-12">
               <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
@@ -27,7 +48,7 @@
 
           <textarea class="form-control1" rows="10" placeholder="ĐÓNG GÓP Ý KIẾN" name="message" required></textarea>
 
-          <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+          <button class="btn btn-primary send-button" type="submit" name="submit" value="SEND">
             <div class="alt-send-button">
               <i class="fa fa-paper-plane lol"></i><span class="send-text">GỬI</span>
             </div>

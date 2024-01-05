@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="./Assets/css/contact.css">
   <link rel="stylesheet" href="./Assets/css/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.2/bootstrap-icons.svg">
   <link rel="stylesheet" href="./Assets/css/silder_contact.css">
   <link rel="stylesheet" href="./Assets/css/responsive.css">
 

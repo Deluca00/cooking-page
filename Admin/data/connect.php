@@ -22,7 +22,7 @@ function thucphamchinhthit($conn){
 }
 function baidangmonanhaisan($conn){
 
-  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('tom', 'cahoi', 'muc')";
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('tom', 'cahoi', 'muc') AND Trangthai = 'accept' ";
 $result = mysqli_query($conn,$query);
   return $result;
 
@@ -30,7 +30,7 @@ $result = mysqli_query($conn,$query);
 
 function baidangmonanthit($conn){
 
-  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('thitheo', 'thitbo')";
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('thitheo', 'thitbo') AND Trangthai = 'accept'";
 $result = mysqli_query($conn,$query);
   return $result;
 
@@ -38,7 +38,7 @@ $result = mysqli_query($conn,$query);
 
 function baidangmonandiemtam($conn){
 
-  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('diemtam')";
+  $query = "SELECT * FROM baidangmonan WHERE ID_thucphamchinh IN ('diemtam') AND Trangthai = 'accept'";
 $result = mysqli_query($conn,$query);
   return $result;
 

@@ -62,7 +62,9 @@
                                 <td><?php echo $value['Trangthai'] ?></td>
                                 <td class="d-md-flex gap-3 mt-3">
                                   <a href="baidangmodifier.php?ID_baidang=<?php echo $value['ID_baidang']?>"><i class="far fa-pen"></i></a>
-                                  <a href="baidangremove.php?ID_baidang=<?php echo $value['ID_baidang']?>"><i class="far fa-trash"></i></i></a>
+                                  <a href="baidangremove.php?ID_baidang=<?php echo $value['ID_baidang']?>"><i class="far fa-trash"></i></a>
+                                  <a href="baidangverify.php?ID_baidang=<?php echo $value['ID_baidang']?>"><i class="fa-sharp fa-solid fa-shield-check"></i></i></a>
+
                                 </td>
                         </tr> 
 
