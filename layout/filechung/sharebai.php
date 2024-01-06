@@ -1,7 +1,16 @@
 <?php
+include 'mailer/PHPMailer.php';
+include 'mailer/Exception.php';
+include 'mailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 include 'datalock.php';
 
 if (isset($_POST['submit'])) {
+  
     // Handle the main dish image upload
     $image = $_FILES['img']['name'];
     $tempname = $_FILES['img']['tmp_name'];
@@ -56,7 +65,7 @@ if (isset($_POST['submit'])) {
     $requete->bindParam(':ID_thucphamchinh', $ID_thucphamchinh, PDO::PARAM_STR);
     $requete->bindParam(':Tenmonan', $Tenmonan, PDO::PARAM_STR);
     $requete->bindParam(':image', $image, PDO::PARAM_STR);
-    
+
     // Bind ingredient images to the parameters
     foreach ($ingredientImages as $key => $ingredientImage) {
         $requete->bindParam(':' . $key, $ingredientImage, PDO::PARAM_STR);
@@ -72,10 +81,42 @@ if (isset($_POST['submit'])) {
     $res = $requete->execute();
 
     if ($res) {
-        echo '<script>alert("Gửi bài thành công"); window.location.href = "../../index.php";</script>';
+       
+
+        $requete = $conn->prepare("SELECT * FROM nguoidung WHERE ID_nguoidung = :ID_nguoidung");
+        $requete->bindParam(':ID_nguoidung', $ID_nguoidung, PDO::PARAM_STR);
+        $requete->execute();
+        $result = $requete->fetch();
+        $email = $result['Email'];
+        $mail = new PHPMailer(true);
+        try {
+            //Server settings
+            $mail->SMTPDebug = 2;
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host= 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'huynhkanh24@gmail.com';
+            $mail->Password = 'aaix oofj xomt orku';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            //Recipients
+            $mail->setFrom('huynhkanh24@gmail.com', 'Cookings Book');
+            $mail->addAddress($email, $ID_nguoidung);
+
+            $mail->isHTML(true);
+            $mail->Subject = 'Thanks for you share';
+            $mail->Body    = 'Với sự chia sẻ món ăn của bạn đã làm cho trang web chúng tôi thêm phần phong phú';
+            $mail->AltBody = 'Chúng tôi sẽ xem xét và cho đăng tải trong thời gian ngắn nhất';
+
+            $mail->send();
+
+
+            echo '<script>alert("Gửi bài thành công"); window.location.href = "../../index.php";</script>';
+        } catch (Exception $e) {
+            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+        }
     } else {
         echo '<script>alert("Gửi bài thất bại"); window.location.href = "../../index.php";</script>';
     }
-    
 }
-?>

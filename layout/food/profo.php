@@ -29,7 +29,7 @@
     </div>
     <section id="pof">
         <div class="row">
-            <div class="col-md-4 mix cat1 cat4 ingredient haisan top10">
+            <div class="col-md-4 mix cat1 cat6 ingredient haisan top10">
                 <div class="portfolio">
                     <img src="./Assets/Images/haisan.jpg" alt="">
   
