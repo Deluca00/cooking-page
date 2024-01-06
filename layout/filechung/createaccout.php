@@ -31,7 +31,7 @@
                 $mail->Username = 'huynhkanh24@gmail.com';                 
                 $mail->Password = 'aaix oofj xomt orku';                        
                 $mail->SMTPSecure = 'tls';                            
-                $mail->Port = 997;                                    
+                $mail->Port = 587;                                    
              
                 //Recipients
                 $mail->setFrom('huynhkanh24@gmail.com', 'Cookings book');
@@ -43,8 +43,9 @@
                 $mail->AltBody = 'Sự đăng kí của bạn của niềm vinh hạnh của chúng tôi';
              
                 $mail->send();
+                
 
-                header('location: index_login.php');
+                echo '<script>alert("Đăng kí thành công"); window.location.href = "index_login.php";</script>';
             } catch (Exception $e) {
                 echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
             }

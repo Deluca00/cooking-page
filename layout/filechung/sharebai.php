@@ -81,8 +81,6 @@ if (isset($_POST['submit'])) {
     $res = $requete->execute();
 
     if ($res) {
-       
-
         $requete = $conn->prepare("SELECT * FROM nguoidung WHERE ID_nguoidung = :ID_nguoidung");
         $requete->bindParam(':ID_nguoidung', $ID_nguoidung, PDO::PARAM_STR);
         $requete->execute();
@@ -111,6 +109,9 @@ if (isset($_POST['submit'])) {
 
             $mail->send();
 
+
+
+            
 
             echo '<script>alert("Gửi bài thành công"); window.location.href = "../../index.php";</script>';
         } catch (Exception $e) {

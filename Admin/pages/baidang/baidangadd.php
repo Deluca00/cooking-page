@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 
     // Prepare and execute the SQL query
     $requete = $con->prepare("INSERT INTO `baidangmonan` 
-    ('ID_baidang'`ID_nguoidung`, `ID_thucphamchinh`, `Tenmonan`, `anhmon`, 
+    (`ID_baidang`,`ID_nguoidung`, `ID_thucphamchinh`, `Tenmonan`, `anhmon`, 
      `nguyenlieu1`, `nguyenlieu2`, `nguyenlieu3`, `nguyenlieu4`, 
      `nguyenlieu5`, `nguyenlieu6`, `Motamonan`, `Thoigianchuanbi`, 
      `Nguyenlieu`, `Thoigianlam`, `Congthuc`, `Video`, `Trangthai`) 
